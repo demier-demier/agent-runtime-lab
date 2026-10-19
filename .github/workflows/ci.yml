@@ -1,0 +1,25 @@
+name: Runtime invariants
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [22, 24]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run web:build
+      - run: npm run evaluate
+      - uses: actions/upload-artifact@v4
+        with:
+          name: observed-fault-matrix-node-${{ matrix.node }}
+          path: artifacts/observed-fault-matrix.json

@@ -1,0 +1,37 @@
+{
+  "name": "agent-runtime-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Durable, policy-aware agent workflow execution with failure injection and evidence.",
+  "engines": {
+    "node": ">=22.16.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test --test-concurrency=1 tests/*.test.mjs",
+    "demo": "npm run build && node build/cli.js demo",
+    "evaluate": "npm run build && node scripts/evaluate.mjs",
+    "web:build": "node scripts/build-web.mjs",
+    "check": "npm test && npm run web:build && npm run evaluate",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.web.json",
+    "format": "prettier --write src web scripts tests docs README.md PROVENANCE.md package.json tsconfig.json tsconfig.web.json .github/workflows",
+    "format:check": "prettier --check src web/app.ts web/index.html web/style.css scripts tests docs README.md PROVENANCE.md package.json tsconfig.json tsconfig.web.json .github/workflows"
+  },
+  "exports": {
+    ".": "./build/core.js",
+    "./sqlite": "./build/sqlite.js",
+    "./worker": "./build/worker.js"
+  },
+  "dependencies": {
+    "@noble/hashes": "2.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "esbuild": "0.25.12",
+    "fake-indexeddb": "6.2.4",
+    "prettier": "3.6.2",
+    "typescript": "5.9.3"
+  },
+  "license": "MIT"
+}

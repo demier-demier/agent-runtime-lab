@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta
+      name="description"
+      content="A hands-on agent runtime lab: approvals, durable workflows, crash recovery and evidence."
+    />
+    <title>Agent Runtime Lab · Durable execution</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <a class="back" href="../">← All demos</a>
+        <div class="wordmark">
+          <span class="brandmark">a/r</span> AGENT RUNTIME LAB
+          <span class="version">v0.1</span>
+        </div>
+        <a
+          href="https://github.com/demier-demier/agent-runtime-lab"
+          target="_blank"
+          rel="noopener"
+          >Source ↗</a
+        >
+      </header>
+      <section class="hero">
+        <div>
+          <div class="eyebrow">
+            DURABLE SYSTEMS / INTERACTIVE ENGINEERING LAB
+          </div>
+          <h1>Give agents a runtime.<br /><span>Not a leap of faith.</span></h1>
+          <p class="intro">
+            Inspect the plan. Bind an approval. Interrupt a write.<br />Recover
+            the evidence without blindly repeating the action.
+          </p>
+        </div>
+        <div class="hero-note">
+          <div class="live-dot"></div>
+          <strong>Computed in your browser</strong>
+          <p>
+            The same TypeScript state machine powers the SQLite worker and this
+            IndexedDB lab. Every click creates real state transitions.
+          </p>
+          <div class="small-tags">
+            <span>NO INSTALL</span><span>NO ACCOUNT</span
+            ><span>NO API KEY</span>
+          </div>
+        </div>
+      </section>
+      <section class="boundary">
+        <strong>Know the boundary</strong>
+        <p>
+          This browser lab simulates identities and an external ticket service.
+          It uses deterministic synthetic planning, not an LLM. The repository
+          separately tests real worker-process crashes and HTTP effects with
+          SQLite. Cost means synthetic execution units.
+        </p>
+      </section>
+      <section class="workspace">
+        <aside class="control-panel card">
+          <div class="section-number">01 / CONTROL ROOM</div>
+          <h2>Choose your failure.</h2>
+          <label for="scenario">Scenario</label
+          ><select id="scenario">
+            <option value="safe">Idempotent ticket workflow</option>
+            <option value="uncertain">Non-idempotent connector</option>
+            <option value="budget">Constrained execution budget</option>
+          </select>
+          <button id="new" class="button secondary full">Start new run</button>
+          <label for="role">Act as · simulated identity</label
+          ><select id="role">
+            <option value="worker">Worker / executor</option>
+            <option value="reviewer">Reviewer / independent human</option>
+            <option value="operator">Operator / policy owner</option>
+          </select>
+          <div class="button-stack">
+            <button id="step" class="button primary">
+              Execute one step <span>→</span></button
+            ><button id="run" class="button secondary">Run to next gate</button>
+          </div>
+          <div class="divider"></div>
+          <h3>Human gate</h3>
+          <div class="two-buttons">
+            <button id="approve" class="button accent">Approve</button
+            ><button id="deny" class="button secondary">Deny</button>
+          </div>
+          <p class="hint">
+            Switch to Reviewer. Approval binds arguments, tenant, tool contract,
+            and policy revision.
+          </p>
+          <div class="divider"></div>
+          <h3>Failure & recovery</h3>
+          <button id="crash" class="button danger full">
+            Interrupt after ticket write
+          </button>
+          <div class="two-buttons">
+            <button id="recover" class="button secondary">Recover</button
+            ><button id="reconcile" class="button secondary">Reconcile</button>
+          </div>
+          <p class="hint">
+            An interruption persists the effect and skips its checkpoint.
+            Non-idempotent recovery stops for a reviewer.
+          </p>
+          <details>
+            <summary>Change the authorization boundary</summary>
+            <label for="title">Proposed ticket title</label
+            ><input
+              id="title"
+              maxlength="180"
+              value="Investigate elevated search-index failures"
+            /><button id="edit" class="button secondary full">
+              Apply title change</button
+            ><button id="policy" class="button secondary full">
+              Revoke write capability</button
+            ><button id="tool" class="button secondary full">
+              Upgrade tool contract</button
+            ><button id="expire" class="button secondary full">
+              Expire approval now
+            </button>
+            <p class="hint">
+              Operator actions. A changed payload or contract requires fresh
+              approval. Revocation cannot recall an already admitted request.
+            </p>
+          </details>
+        </aside>
+        <main>
+          <div id="notice" class="notice" role="status" aria-live="polite">
+            Opening the local runtime…
+          </div>
+          <div class="metrics">
+            <div><span>RUN STATUS</span><strong id="status">—</strong></div>
+            <div>
+              <span>EXECUTION UNITS</span><strong id="budget">0 / 8</strong>
+            </div>
+            <div>
+              <span>PERSISTED EFFECTS</span
+              ><strong id="effects-count">0</strong>
+            </div>
+            <div>
+              <span>EVIDENCE EVENTS</span><strong id="events-count">0</strong>
+            </div>
+          </div>
+          <section class="card graph-card">
+            <div class="card-heading">
+              <div>
+                <div class="section-number">02 / VALIDATED PLAN</div>
+                <h2>Research → action → proof</h2>
+              </div>
+              <span id="run-id" class="pill">—</span>
+            </div>
+            <div id="graph" class="graph"></div>
+            <p class="graph-caption">
+              Every dependency must complete before the next node can run. A
+              write requires a matching, unexpired approval.
+            </p>
+          </section>
+          <div class="two-columns">
+            <section class="card">
+              <div class="section-number">03 / PROPOSED ACTION</div>
+              <h2>The exact request</h2>
+              <div id="proposal" class="empty">
+                Advance the plan to generate an approval request.
+              </div>
+            </section>
+            <section class="card">
+              <div class="section-number">04 / TRANSACTIONAL OUTBOX</div>
+              <h2>Delivery state</h2>
+              <div id="outbox" class="empty">No action has been admitted.</div>
+            </section>
+          </div>
+          <section class="card trace-card">
+            <div class="card-heading">
+              <div>
+                <div class="section-number">05 / APPEND-ONLY EVIDENCE</div>
+                <h2>Follow the decision trail.</h2>
+              </div>
+              <div class="trace-actions">
+                <button id="verify" class="button mini secondary">
+                  Verify chain</button
+                ><button id="export" class="button mini secondary">
+                  Export run ↓
+                </button>
+              </div>
+            </div>
+            <div id="chain" class="chain"></div>
+            <div id="trace" class="trace"></div>
+          </section>
+          <section class="card evidence-card">
+            <div class="section-number">06 / SYNTHETIC REMOTE EFFECTS</div>
+            <h2>What actually got written</h2>
+            <div id="effects" class="empty">
+              No tickets yet. Approval alone does not create an effect.
+            </div>
+          </section>
+        </main>
+      </section>
+      <footer>
+        <p>
+          Original, synthetic fixtures. No employer or customer data. Browser
+          data stays in this browser and can be reset with Start new run.
+        </p>
+        <p>
+          <a
+            href="https://github.com/demier-demier/agent-runtime-lab/blob/main/docs/architecture.md"
+            target="_blank"
+            rel="noopener"
+            >Architecture & boundaries ↗</a
+          >
+          <span>·</span> Built by Bernardo Demier
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,872 @@
+{
+  "format": "agent-runtime-observed-fault-matrix-v1",
+  "generatedAt": "2026-10-19T22:27:53.494Z",
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "darwin",
+    "architecture": "arm64"
+  },
+  "scope": "Observed local synthetic HTTP connector / separate SQLite database / separate worker processes. Durations are one local run, not a performance benchmark. No LLM, tokens, money, or production reliability claim.",
+  "results": [
+    {
+      "scenario": "crash-after-remote-commit",
+      "passed": true,
+      "observed": {
+        "status": "completed",
+        "remoteEffects": 1,
+        "dispatchAttempts": 1,
+        "executionUnits": 6,
+        "observedUnknown": false,
+        "processExitCodes": [
+          86,
+          0,
+          0
+        ],
+        "elapsedMs": 585,
+        "integrity": {
+          "valid": true,
+          "failedAt": null,
+          "head": "942e70fd11f14536ce9cfb8b3e9f1a311bd622a7b0c250ce70b94cda5da0d831"
+        }
+      },
+      "evidence": [
+        {
+          "at": 1792448871079,
+          "data": {
+            "planDigest": "2ddb363451e8ab26f0437050011d3fe3cdcbbe56b9cf68ae820ccac2f5c4ea77",
+            "planner": "deterministic-synthetic-v1",
+            "policyDigest": "7b676cf8a5b773f037ab12dd4d2fbe9181b5c47d470b02629a118ca1644268ac"
+          },
+          "hash": "63fa92075cd6b5732ecc6d5133a8210f6f57db9fc596cf132f0186dd66c676f0",
+          "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+          "principal": "operator",
+          "role": "operator",
+          "seq": 1,
+          "type": "run.created"
+        },
+        {
+          "at": 1792448871081,
+          "data": {
+            "cost": 1,
+            "kind": "research",
+            "nodeId": "research"
+          },
+          "hash": "12d9afba6d81793a4f59b8e70f4378e520c0282282a0e85a7607081e787c9610",
+          "previous": "63fa92075cd6b5732ecc6d5133a8210f6f57db9fc596cf132f0186dd66c676f0",
+          "principal": "worker",
+          "role": "worker",
+          "seq": 2,
+          "type": "node.completed"
+        },
+        {
+          "at": 1792448871081,
+          "data": {
+            "cost": 1,
+            "kind": "propose",
+            "nodeId": "propose"
+          },
+          "hash": "bd6089ee92edf75e14d061c323baf02a33fdd6557c6a55b52f06ac2dcb328849",
+          "previous": "12d9afba6d81793a4f59b8e70f4378e520c0282282a0e85a7607081e787c9610",
+          "principal": "worker",
+          "role": "worker",
+          "seq": 3,
+          "type": "node.completed"
+        },
+        {
+          "at": 1792448871082,
+          "data": {
+            "binding": "b17025bdbac79dd8975976ca86a1be8584f19b718cf21f382eb5a799805b9f81",
+            "nodeId": "ticket",
+            "payloadDigest": "81d95af50c53472284cd10f5ceee8325a6dfb810c557294545881e3ee917c401"
+          },
+          "hash": "910f02d89e3b3dab9d5fc0e05109b17c4dcc355b45cd587788509ed8e442ed5f",
+          "previous": "bd6089ee92edf75e14d061c323baf02a33fdd6557c6a55b52f06ac2dcb328849",
+          "principal": "worker",
+          "role": "worker",
+          "seq": 4,
+          "type": "action.proposed"
+        },
+        {
+          "at": 1792448871084,
+          "data": {
+            "binding": "b17025bdbac79dd8975976ca86a1be8584f19b718cf21f382eb5a799805b9f81",
+            "expiresAt": 1792448991084,
+            "reviewer": "reviewer"
+          },
+          "hash": "5286605d5b971f796daa63389ddcedf5e3fd9b9303ea1dfffaaa27ee2f1e09ca",
+          "previous": "910f02d89e3b3dab9d5fc0e05109b17c4dcc355b45cd587788509ed8e442ed5f",
+          "principal": "reviewer",
+          "role": "reviewer",
+          "seq": 5,
+          "type": "approval.granted"
+        },
+        {
+          "at": 1792448871084,
+          "data": {
+            "key": "fff4f64f98f314f13084e303be11bd497d5bb92641d8cc96f4693db86592c0be"
+          },
+          "hash": "f3eaa7589ad94b4ce3a7a1049c44da6d94579ddba01c5b2fe81203c86569dec8",
+          "previous": "5286605d5b971f796daa63389ddcedf5e3fd9b9303ea1dfffaaa27ee2f1e09ca",
+          "principal": "reviewer",
+          "role": "reviewer",
+          "seq": 6,
+          "type": "outbox.enqueued"
+        },
+        {
+          "at": 1792448871166,
+          "data": {
+            "attempt": 1,
+            "key": "fff4f64f98f314f13084e303be11bd497d5bb92641d8cc96f4693db86592c0be",
+            "payloadDigest": "81d95af50c53472284cd10f5ceee8325a6dfb810c557294545881e3ee917c401"
+          },
+          "hash": "b0079d96d5b00dbdf9da1669cf4f8be63aaf4ea638f37ffff3b3d69a6b424c75",
+          "previous": "f3eaa7589ad94b4ce3a7a1049c44da6d94579ddba01c5b2fe81203c86569dec8",
+          "principal": "worker-cli",
+          "role": "worker",
+          "seq": 7,
+          "type": "dispatch.started"
+        },
+        {
+          "at": 1792448871598,
+          "data": {
+            "receipt": {
+              "key": "fff4f64f98f314f13084e303be11bd497d5bb92641d8cc96f4693db86592c0be",
+              "payloadDigest": "81d95af50c53472284cd10f5ceee8325a6dfb810c557294545881e3ee917c401",
+              "tenant": "demo",
+              "ticketId": "syn-a528a233-aa41-41b1-b3fb-8eb376b23070"
+            }
+          },
+          "hash": "238610a7a36831105aee9c802c71c6bf525879f41f2c84e2091d1f7fda0145b5",
+          "previous": "b0079d96d5b00dbdf9da1669cf4f8be63aaf4ea638f37ffff3b3d69a6b424c75",
+          "principal": "worker-cli",
+          "role": "worker",
+          "seq": 8,
+          "type": "recovery.receipt_verified"
+        },
+        {
+          "at": 1792448871646,
+          "data": {
+            "cost": 1,
+            "kind": "verify",
+            "nodeId": "verify"
+          },
+          "hash": "86f035057d12e7a68dc16620bed926033da5a9236a932b74fb7dd49a844296a5",
+          "previous": "238610a7a36831105aee9c802c71c6bf525879f41f2c84e2091d1f7fda0145b5",
+          "principal": "worker-cli",
+          "role": "worker",
+          "seq": 9,
+          "type": "node.completed"
+        },
+        {
+          "at": 1792448871646,
+          "data": {
+            "spent": 6,
+            "steps": 4
+          },
+          "hash": "942e70fd11f14536ce9cfb8b3e9f1a311bd622a7b0c250ce70b94cda5da0d831",
+          "previous": "86f035057d12e7a68dc16620bed926033da5a9236a932b74fb7dd49a844296a5",
+          "principal": "worker-cli",
+          "role": "worker",
+          "seq": 10,
+          "type": "run.completed"
+        }
+      ]
+    },
+    {
+      "scenario": "lost-http-acknowledgement",
+      "passed": true,
+      "observed": {
+        "status": "completed",
+        "remoteEffects": 1,
+        "dispatchAttempts": 1,
+        "executionUnits": 6,
+        "observedUnknown": false,
+        "processExitCodes": [
+          1,
+          0,
+          0
+        ],
+        "elapsedMs": 209,
+        "integrity": {
+          "valid": true,
+          "failedAt": null,
+          "head": "d765492d23bcd8be8cb2edcf7f069758f1ff6884361a3b5ef1f0035f13f40884"
+        }
+      },
+      "evidence": [
+        {
+          "at": 1792448871667,
+          "data": {
+            "planDigest": "2ddb363451e8ab26f0437050011d3fe3cdcbbe56b9cf68ae820ccac2f5c4ea77",
+            "planner": "deterministic-synthetic-v1",
+            "policyDigest": "7b676cf8a5b773f037ab12dd4d2fbe9181b5c47d470b02629a118ca1644268ac"
+          },
+          "hash": "ccf2b49851786bc9d4b2b4227cd9fefe1adf991df98b3676b3fc15fbc608cbf0",
+          "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+          "principal": "operator",
+          "role": "operator",
+          "seq": 1,
+          "type": "run.created"
+        },
+        {
+          "at": 1792448871667,
+          "data": {
+            "cost": 1,
+            "kind": "research",
+            "nodeId": "research"
+          },
+          "hash": "ea6f0ef5dfc898dd6a3fc31c2fd96516b3d13f52202dda476e930a7f5d2895ed",
+          "previous": "ccf2b49851786bc9d4b2b4227cd9fefe1adf991df98b3676b3fc15fbc608cbf0",
+          "principal": "worker",
+          "role": "worker",
+          "seq": 2,
+          "type": "node.completed"
+        },
+        {
+          "at": 1792448871668,
+          "data": {
+            "cost": 1,
+            "kind": "propose",
+            "nodeId": "propose"
+          },
+          "hash": "65d22918a52491e5b04c21d6981c7c8ae419c7a65682f49e635a0718391945d3",
+          "previous": "ea6f0ef5dfc898dd6a3fc31c2fd96516b3d13f52202dda476e930a7f5d2895ed",
+          "principal": "worker",
+          "role": "worker",
+          "seq": 3,
+          "type": "node.completed"
+        },
+        {
+          "at": 1792448871669,
+          "data": {
+            "binding": "b17025bdbac79dd8975976ca86a1be8584f19b718cf21f382eb5a799805b9f81",
+            "nodeId": "ticket",
+            "payloadDigest": "81d95af50c53472284cd10f5ceee8325a6dfb810c557294545881e3ee917c401"
+          },
+          "hash": "b73778701b313926cad95776742eb8d09b2691dda5325e00cf3efe5b9432a120",
+          "previous": "65d22918a52491e5b04c21d6981c7c8ae419c7a65682f49e635a0718391945d3",
+          "principal": "worker",
+          "role": "worker",
+          "seq": 4,
+          "type": "action.proposed"
+        },
+        {
+          "at": 1792448871670,
+          "data": {
+            "binding": "b17025bdbac79dd8975976ca86a1be8584f19b718cf21f382eb5a799805b9f81",
+            "expiresAt": 1792448991670,
+            "reviewer": "reviewer"
+          },
+          "hash": "8a21e7c14f99b5d0d2f6cbb372ae55edf21cd8a8adc913d917cb5abbf59d7101",
+          "previous": "b73778701b313926cad95776742eb8d09b2691dda5325e00cf3efe5b9432a120",
+          "principal": "reviewer",
+          "role": "reviewer",
+          "seq": 5,
+          "type": "approval.granted"
+        },
+        {
+          "at": 1792448871670,
+          "data": {
+            "key": "fff4f64f98f314f13084e303be11bd497d5bb92641d8cc96f4693db86592c0be"
+          },
+          "hash": "e428a9c89af17101e4cd87c406538d542060e27a5eaa95e7f75d91968336469d",
+          "previous": "8a21e7c14f99b5d0d2f6cbb372ae55edf21cd8a8adc913d917cb5abbf59d7101",
+          "principal": "reviewer",
+          "role": "reviewer",
+          "seq": 6,
+          "type": "outbox.enqueued"
+        },
+        {
+          "at": 1792448871752,
+          "data": {
+            "attempt": 1,
+            "key": "fff4f64f98f314f13084e303be11bd497d5bb92641d8cc96f4693db86592c0be",
+            "payloadDigest": "81d95af50c53472284cd10f5ceee8325a6dfb810c557294545881e3ee917c401"
+          },
+          "hash": "3df96be45df11c9664faa0034556fe1c78322b6f4094f72537b47704cd295ab9",
+          "previous": "e428a9c89af17101e4cd87c406538d542060e27a5eaa95e7f75d91968336469d",
+          "principal": "worker-cli",
+          "role": "worker",
+          "seq": 7,
+          "type": "dispatch.started"
+        },
+        {
+          "at": 1792448871817,
+          "data": {
+            "receipt": {
+              "key": "fff4f64f98f314f13084e303be11bd497d5bb92641d8cc96f4693db86592c0be",
+              "payloadDigest": "81d95af50c53472284cd10f5ceee8325a6dfb810c557294545881e3ee917c401",
+              "tenant": "demo",
+              "ticketId": "syn-59ae4b11-6360-4d7d-91bc-8b39fcddde8d"
+            }
+          },
+          "hash": "b76392ae63d3dbd7ee2a24c5ef42f9df48110a64b2894fc41f4a252646cfb541",
+          "previous": "3df96be45df11c9664faa0034556fe1c78322b6f4094f72537b47704cd295ab9",
+          "principal": "worker-cli",
+          "role": "worker",
+          "seq": 8,
+          "type": "recovery.receipt_verified"
+        },
+        {
+          "at": 1792448871866,
+          "data": {
+            "cost": 1,
+            "kind": "verify",
+            "nodeId": "verify"
+          },
+          "hash": "c296691feb9f05b87f5ab7fd5a2515ed1c15de4e9ac341a9497b4feb66a8e121",
+          "previous": "b76392ae63d3dbd7ee2a24c5ef42f9df48110a64b2894fc41f4a252646cfb541",
+          "principal": "worker-cli",
+          "role": "worker",
+          "seq": 9,
+          "type": "node.completed"
+        },
+        {
+          "at": 1792448871866,
+          "data": {
+            "spent": 6,
+            "steps": 4
+          },
+          "hash": "d765492d23bcd8be8cb2edcf7f069758f1ff6884361a3b5ef1f0035f13f40884",
+          "previous": "c296691feb9f05b87f5ab7fd5a2515ed1c15de4e9ac341a9497b4feb66a8e121",
+          "principal": "worker-cli",
+          "role": "worker",
+          "seq": 10,
+          "type": "run.completed"
+        }
+      ]
+    },
+    {
+      "scenario": "restart-before-http-write",
+      "passed": true,
+      "observed": {
+        "status": "completed",
+        "remoteEffects": 1,
+        "dispatchAttempts": 2,
+        "executionUnits": 6,
+        "observedUnknown": false,
+        "processExitCodes": [
+          0,
+          0,
+          0
+        ],
+        "elapsedMs": 215,
+        "integrity": {
+          "valid": true,
+          "failedAt": null,
+          "head": "d253d6974fdf1b4645e316039e3d13005baea9310b0eaee9741232b8388ea842"
+        }
+      },
+      "evidence": [
+        {
+          "at": 1792448871880,
+          "data": {
+            "planDigest": "2ddb363451e8ab26f0437050011d3fe3cdcbbe56b9cf68ae820ccac2f5c4ea77",
+            "planner": "deterministic-synthetic-v1",
+            "policyDigest": "7b676cf8a5b773f037ab12dd4d2fbe9181b5c47d470b02629a118ca1644268ac"
+          },
+          "hash": "9b4c34adb3969cde70a98b0bd128c2705fef05c1766ac694a6f7cc4ac266933c",
+          "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+          "principal": "operator",
+          "role": "operator",
+          "seq": 1,
+          "type": "run.created"
+        },
+        {
+          "at": 1792448871880,
+          "data": {
+            "cost": 1,
+            "kind": "research",
+            "nodeId": "research"
+          },
+          "hash": "7a21b17860db8016e3da9312a9f30ae3b46bc34fa253f321d18b0d2a86033078",
+          "previous": "9b4c34adb3969cde70a98b0bd128c2705fef05c1766ac694a6f7cc4ac266933c",
+          "principal": "worker",
+          "role": "worker",
+          "seq": 2,
+          "type": "node.completed"
+        },
+        {
+          "at": 1792448871881,
+          "data": {
+            "cost": 1,
+            "kind": "propose",
+            "nodeId": "propose"
+          },
+          "hash": "2cc43abd63e32e197cbda124e8afdb630c83e77a85aed43db4abe1771aa6a1c9",
+          "previous": "7a21b17860db8016e3da9312a9f30ae3b46bc34fa253f321d18b0d2a86033078",
+          "principal": "worker",
+          "role": "worker",
+          "seq": 3,
+          "type": "node.completed"
+        },
+        {
+          "at": 1792448871881,
+          "data": {
+            "binding": "b17025bdbac79dd8975976ca86a1be8584f19b718cf21f382eb5a799805b9f81",
+            "nodeId": "ticket",
+            "payloadDigest": "81d95af50c53472284cd10f5ceee8325a6dfb810c557294545881e3ee917c401"
+          },
+          "hash": "1a86eb1f66e6e06512c922ed4669975b4b5758f6bd01464c1ebd74a982e39907",
+          "previous": "2cc43abd63e32e197cbda124e8afdb630c83e77a85aed43db4abe1771aa6a1c9",
+          "principal": "worker",
+          "role": "worker",
+          "seq": 4,
+          "type": "action.proposed"
+        },
+        {
+          "at": 1792448871882,
+          "data": {
+            "binding": "b17025bdbac79dd8975976ca86a1be8584f19b718cf21f382eb5a799805b9f81",
+            "expiresAt": 1792448991882,
+            "reviewer": "reviewer"
+          },
+          "hash": "9c0a21d911c78833d1086c777cc8dbc9e886604171ae7024f51318ceb826a818",
+          "previous": "1a86eb1f66e6e06512c922ed4669975b4b5758f6bd01464c1ebd74a982e39907",
+          "principal": "reviewer",
+          "role": "reviewer",
+          "seq": 5,
+          "type": "approval.granted"
+        },
+        {
+          "at": 1792448871882,
+          "data": {
+            "key": "fff4f64f98f314f13084e303be11bd497d5bb92641d8cc96f4693db86592c0be"
+          },
+          "hash": "df9632a047ed78b2be3861eab6269914bc3efc7b2127a0b78e69658ca183f499",
+          "previous": "9c0a21d911c78833d1086c777cc8dbc9e886604171ae7024f51318ceb826a818",
+          "principal": "reviewer",
+          "role": "reviewer",
+          "seq": 6,
+          "type": "outbox.enqueued"
+        },
+        {
+          "at": 1792448871926,
+          "data": {
+            "attempt": 1,
+            "key": "fff4f64f98f314f13084e303be11bd497d5bb92641d8cc96f4693db86592c0be",
+            "payloadDigest": "81d95af50c53472284cd10f5ceee8325a6dfb810c557294545881e3ee917c401"
+          },
+          "hash": "ce22ea6c12535cd0a098d8bb94040f4d3c61569b696c1cf0d900b5187910fccf",
+          "previous": "df9632a047ed78b2be3861eab6269914bc3efc7b2127a0b78e69658ca183f499",
+          "principal": "worker",
+          "role": "worker",
+          "seq": 7,
+          "type": "dispatch.started"
+        },
+        {
+          "at": 1792448871977,
+          "data": {
+            "key": "fff4f64f98f314f13084e303be11bd497d5bb92641d8cc96f4693db86592c0be",
+            "note": "same key; policy and approval checked again at dispatch"
+          },
+          "hash": "4fb23961a64af8fc999de4da29e2804d00e6fc9c94f444f63bf0af34391e178b",
+          "previous": "ce22ea6c12535cd0a098d8bb94040f4d3c61569b696c1cf0d900b5187910fccf",
+          "principal": "worker-cli",
+          "role": "worker",
+          "seq": 8,
+          "type": "recovery.retry_ready"
+        },
+        {
+          "at": 1792448872027,
+          "data": {
+            "attempt": 2,
+            "key": "fff4f64f98f314f13084e303be11bd497d5bb92641d8cc96f4693db86592c0be",
+            "payloadDigest": "81d95af50c53472284cd10f5ceee8325a6dfb810c557294545881e3ee917c401"
+          },
+          "hash": "0778ee708a13f3a4a91e1386e9ec5b3c8521a758797a2f5bd7fdebf72690eab9",
+          "previous": "4fb23961a64af8fc999de4da29e2804d00e6fc9c94f444f63bf0af34391e178b",
+          "principal": "worker-cli",
+          "role": "worker",
+          "seq": 9,
+          "type": "dispatch.started"
+        },
+        {
+          "at": 1792448872039,
+          "data": {
+            "receipt": {
+              "key": "fff4f64f98f314f13084e303be11bd497d5bb92641d8cc96f4693db86592c0be",
+              "payloadDigest": "81d95af50c53472284cd10f5ceee8325a6dfb810c557294545881e3ee917c401",
+              "tenant": "demo",
+              "ticketId": "syn-bce27c9e-bc72-4843-9630-a320e2f62dcd"
+            }
+          },
+          "hash": "a5a00fa66c6cad7cc1848478ad0e05a0041a0d7d52de2239a8eb44b85508c84f",
+          "previous": "0778ee708a13f3a4a91e1386e9ec5b3c8521a758797a2f5bd7fdebf72690eab9",
+          "principal": "worker-cli",
+          "role": "worker",
+          "seq": 10,
+          "type": "action.completed"
+        },
+        {
+          "at": 1792448872086,
+          "data": {
+            "cost": 1,
+            "kind": "verify",
+            "nodeId": "verify"
+          },
+          "hash": "7fd792a282d76e2072cef544fd526ee72b6ae659e76d5a2d9fda255567640265",
+          "previous": "a5a00fa66c6cad7cc1848478ad0e05a0041a0d7d52de2239a8eb44b85508c84f",
+          "principal": "worker-cli",
+          "role": "worker",
+          "seq": 11,
+          "type": "node.completed"
+        },
+        {
+          "at": 1792448872086,
+          "data": {
+            "spent": 6,
+            "steps": 5
+          },
+          "hash": "d253d6974fdf1b4645e316039e3d13005baea9310b0eaee9741232b8388ea842",
+          "previous": "7fd792a282d76e2072cef544fd526ee72b6ae659e76d5a2d9fda255567640265",
+          "principal": "worker-cli",
+          "role": "worker",
+          "seq": 12,
+          "type": "run.completed"
+        }
+      ]
+    },
+    {
+      "scenario": "non-idempotent-unknown",
+      "passed": true,
+      "observed": {
+        "status": "completed",
+        "remoteEffects": 1,
+        "dispatchAttempts": 1,
+        "executionUnits": 6,
+        "observedUnknown": true,
+        "processExitCodes": [
+          86,
+          0,
+          1,
+          0
+        ],
+        "elapsedMs": 616,
+        "integrity": {
+          "valid": true,
+          "failedAt": null,
+          "head": "8c82810c36f189b0bed08aed81f2637bf199d39a6fb507f8949837bb700212b0"
+        }
+      },
+      "evidence": [
+        {
+          "at": 1792448872099,
+          "data": {
+            "planDigest": "2ddb363451e8ab26f0437050011d3fe3cdcbbe56b9cf68ae820ccac2f5c4ea77",
+            "planner": "deterministic-synthetic-v1",
+            "policyDigest": "7b676cf8a5b773f037ab12dd4d2fbe9181b5c47d470b02629a118ca1644268ac"
+          },
+          "hash": "8cf0c4151146dad9cccc047b0a707e9bfd5116f6414a4b2f384d8035b890360e",
+          "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+          "principal": "operator",
+          "role": "operator",
+          "seq": 1,
+          "type": "run.created"
+        },
+        {
+          "at": 1792448872100,
+          "data": {
+            "cost": 1,
+            "kind": "research",
+            "nodeId": "research"
+          },
+          "hash": "057b80c42c5462b6322b586ffaa5b855d9a479aad92a97b2297b39c7f114411d",
+          "previous": "8cf0c4151146dad9cccc047b0a707e9bfd5116f6414a4b2f384d8035b890360e",
+          "principal": "worker",
+          "role": "worker",
+          "seq": 2,
+          "type": "node.completed"
+        },
+        {
+          "at": 1792448872100,
+          "data": {
+            "cost": 1,
+            "kind": "propose",
+            "nodeId": "propose"
+          },
+          "hash": "9160e1ae50b032067f067b21e0b7777fa1ec163c8bebbdfb1a18e7c1ea4a64aa",
+          "previous": "057b80c42c5462b6322b586ffaa5b855d9a479aad92a97b2297b39c7f114411d",
+          "principal": "worker",
+          "role": "worker",
+          "seq": 3,
+          "type": "node.completed"
+        },
+        {
+          "at": 1792448872101,
+          "data": {
+            "binding": "a00151ae6bfdaf4475e0867c965b9c8444d39a84ea526b2b32980dacd2293309",
+            "nodeId": "ticket",
+            "payloadDigest": "4f2f24dd0484aed2e360fea4c3e31c29931a043310b4e6fdfb00c5a8751403a8"
+          },
+          "hash": "5b7f80d887a0ae2e87140ca2515edba05f1006680aa933f73765dfa5813e40b8",
+          "previous": "9160e1ae50b032067f067b21e0b7777fa1ec163c8bebbdfb1a18e7c1ea4a64aa",
+          "principal": "worker",
+          "role": "worker",
+          "seq": 4,
+          "type": "action.proposed"
+        },
+        {
+          "at": 1792448872101,
+          "data": {
+            "binding": "a00151ae6bfdaf4475e0867c965b9c8444d39a84ea526b2b32980dacd2293309",
+            "expiresAt": 1792448992101,
+            "reviewer": "reviewer"
+          },
+          "hash": "bc42a78ebc97fa68715de1b33d62e650988bda4110a10077f651f3126d37eabf",
+          "previous": "5b7f80d887a0ae2e87140ca2515edba05f1006680aa933f73765dfa5813e40b8",
+          "principal": "reviewer",
+          "role": "reviewer",
+          "seq": 5,
+          "type": "approval.granted"
+        },
+        {
+          "at": 1792448872101,
+          "data": {
+            "key": "b0a9ee0aa9e3d6e3f45487f40a311d08d3b392fcaffb56d076d2d609941a30e0"
+          },
+          "hash": "62303d74f4f6516dd0b2ed8f3c5c51ffc8002c9c6668a96a98b18befedbd13c3",
+          "previous": "bc42a78ebc97fa68715de1b33d62e650988bda4110a10077f651f3126d37eabf",
+          "principal": "reviewer",
+          "role": "reviewer",
+          "seq": 6,
+          "type": "outbox.enqueued"
+        },
+        {
+          "at": 1792448872184,
+          "data": {
+            "attempt": 1,
+            "key": "b0a9ee0aa9e3d6e3f45487f40a311d08d3b392fcaffb56d076d2d609941a30e0",
+            "payloadDigest": "4f2f24dd0484aed2e360fea4c3e31c29931a043310b4e6fdfb00c5a8751403a8"
+          },
+          "hash": "62c2d3dc2085de3a6d66ab015630007dcc2f35c6690fdfd2f338dc61debd0e7c",
+          "previous": "62303d74f4f6516dd0b2ed8f3c5c51ffc8002c9c6668a96a98b18befedbd13c3",
+          "principal": "worker-cli",
+          "role": "worker",
+          "seq": 7,
+          "type": "dispatch.started"
+        },
+        {
+          "at": 1792448872611,
+          "data": {
+            "reason": "connector_has_no_idempotency_contract"
+          },
+          "hash": "407a90bdaf0786fe1708a1f29b02b21c253b5b16f02e57389a43ff65c583e2bf",
+          "previous": "62c2d3dc2085de3a6d66ab015630007dcc2f35c6690fdfd2f338dc61debd0e7c",
+          "principal": "worker-cli",
+          "role": "worker",
+          "seq": 8,
+          "type": "recovery.requires_reconciliation"
+        },
+        {
+          "at": 1792448872663,
+          "data": {
+            "receipt": {
+              "key": "b0a9ee0aa9e3d6e3f45487f40a311d08d3b392fcaffb56d076d2d609941a30e0",
+              "payloadDigest": "4f2f24dd0484aed2e360fea4c3e31c29931a043310b4e6fdfb00c5a8751403a8",
+              "tenant": "demo",
+              "ticketId": "syn-8c363f5b-490b-42df-9f0a-ceac0b06de6f"
+            }
+          },
+          "hash": "7bb2fcbc16c54a95a684bddee6ea6adb42d85299fe0ab6f39f6045b8b4c9d54c",
+          "previous": "407a90bdaf0786fe1708a1f29b02b21c253b5b16f02e57389a43ff65c583e2bf",
+          "principal": "reviewer",
+          "role": "reviewer",
+          "seq": 9,
+          "type": "action.reconciled"
+        },
+        {
+          "at": 1792448872705,
+          "data": {
+            "cost": 1,
+            "kind": "verify",
+            "nodeId": "verify"
+          },
+          "hash": "af822826ccfbd6a7fe146a6fa695dd862ba05e84564735010c3e4bfe27d08394",
+          "previous": "7bb2fcbc16c54a95a684bddee6ea6adb42d85299fe0ab6f39f6045b8b4c9d54c",
+          "principal": "worker-cli",
+          "role": "worker",
+          "seq": 10,
+          "type": "node.completed"
+        },
+        {
+          "at": 1792448872705,
+          "data": {
+            "spent": 6,
+            "steps": 4
+          },
+          "hash": "8c82810c36f189b0bed08aed81f2637bf199d39a6fb507f8949837bb700212b0",
+          "previous": "af822826ccfbd6a7fe146a6fa695dd862ba05e84564735010c3e4bfe27d08394",
+          "principal": "worker-cli",
+          "role": "worker",
+          "seq": 11,
+          "type": "run.completed"
+        }
+      ]
+    },
+    {
+      "scenario": "competing-workers",
+      "passed": true,
+      "observed": {
+        "status": "completed",
+        "remoteEffects": 1,
+        "dispatchAttempts": 1,
+        "executionUnits": 6,
+        "observedUnknown": false,
+        "processExitCodes": [
+          0,
+          1,
+          0
+        ],
+        "elapsedMs": 773,
+        "integrity": {
+          "valid": true,
+          "failedAt": null,
+          "head": "cecbd1e9a1660db7d5ca45b5505488514540c0d2b603b414f0a831a327c27091"
+        }
+      },
+      "evidence": [
+        {
+          "at": 1792448872718,
+          "data": {
+            "planDigest": "2ddb363451e8ab26f0437050011d3fe3cdcbbe56b9cf68ae820ccac2f5c4ea77",
+            "planner": "deterministic-synthetic-v1",
+            "policyDigest": "7b676cf8a5b773f037ab12dd4d2fbe9181b5c47d470b02629a118ca1644268ac"
+          },
+          "hash": "2c6d0e8be0fbac5bbf351d6dd47df36e0087ebbc4c8667a9567c3375ec0e8ba9",
+          "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+          "principal": "operator",
+          "role": "operator",
+          "seq": 1,
+          "type": "run.created"
+        },
+        {
+          "at": 1792448872719,
+          "data": {
+            "cost": 1,
+            "kind": "research",
+            "nodeId": "research"
+          },
+          "hash": "289a3925b8ea8a51ec29f66333f7bddcfa9388fb73113e289e9eac11cd238a49",
+          "previous": "2c6d0e8be0fbac5bbf351d6dd47df36e0087ebbc4c8667a9567c3375ec0e8ba9",
+          "principal": "worker",
+          "role": "worker",
+          "seq": 2,
+          "type": "node.completed"
+        },
+        {
+          "at": 1792448872719,
+          "data": {
+            "cost": 1,
+            "kind": "propose",
+            "nodeId": "propose"
+          },
+          "hash": "da9f00849af295e489bf467fe7d5dc249f0bbb164cd54b698a7fb52412caaf3e",
+          "previous": "289a3925b8ea8a51ec29f66333f7bddcfa9388fb73113e289e9eac11cd238a49",
+          "principal": "worker",
+          "role": "worker",
+          "seq": 3,
+          "type": "node.completed"
+        },
+        {
+          "at": 1792448872720,
+          "data": {
+            "binding": "b17025bdbac79dd8975976ca86a1be8584f19b718cf21f382eb5a799805b9f81",
+            "nodeId": "ticket",
+            "payloadDigest": "81d95af50c53472284cd10f5ceee8325a6dfb810c557294545881e3ee917c401"
+          },
+          "hash": "3ed626a9859de2b22f723c4d6821334ec9971015ac09cc4acac0546799613973",
+          "previous": "da9f00849af295e489bf467fe7d5dc249f0bbb164cd54b698a7fb52412caaf3e",
+          "principal": "worker",
+          "role": "worker",
+          "seq": 4,
+          "type": "action.proposed"
+        },
+        {
+          "at": 1792448872721,
+          "data": {
+            "binding": "b17025bdbac79dd8975976ca86a1be8584f19b718cf21f382eb5a799805b9f81",
+            "expiresAt": 1792448992721,
+            "reviewer": "reviewer"
+          },
+          "hash": "60c8bbb05b8a6f370b70e60e24b33991e39a7fbce01e3e42ae5f832b1f208b72",
+          "previous": "3ed626a9859de2b22f723c4d6821334ec9971015ac09cc4acac0546799613973",
+          "principal": "reviewer",
+          "role": "reviewer",
+          "seq": 5,
+          "type": "approval.granted"
+        },
+        {
+          "at": 1792448872721,
+          "data": {
+            "key": "fff4f64f98f314f13084e303be11bd497d5bb92641d8cc96f4693db86592c0be"
+          },
+          "hash": "cd5dd26cd3155fdaa6c1163afda86cb4c351a51859269ff70f86b1e011af9402",
+          "previous": "60c8bbb05b8a6f370b70e60e24b33991e39a7fbce01e3e42ae5f832b1f208b72",
+          "principal": "reviewer",
+          "role": "reviewer",
+          "seq": 6,
+          "type": "outbox.enqueued"
+        },
+        {
+          "at": 1792448872802,
+          "data": {
+            "attempt": 1,
+            "key": "fff4f64f98f314f13084e303be11bd497d5bb92641d8cc96f4693db86592c0be",
+            "payloadDigest": "81d95af50c53472284cd10f5ceee8325a6dfb810c557294545881e3ee917c401"
+          },
+          "hash": "47aa6caf9719fa8272a9ca802c1aa8a99d9ec30c631635b87ad34b4e7e951098",
+          "previous": "cd5dd26cd3155fdaa6c1163afda86cb4c351a51859269ff70f86b1e011af9402",
+          "principal": "worker-a",
+          "role": "worker",
+          "seq": 7,
+          "type": "dispatch.started"
+        },
+        {
+          "at": 1792448873421,
+          "data": {
+            "receipt": {
+              "key": "fff4f64f98f314f13084e303be11bd497d5bb92641d8cc96f4693db86592c0be",
+              "payloadDigest": "81d95af50c53472284cd10f5ceee8325a6dfb810c557294545881e3ee917c401",
+              "tenant": "demo",
+              "ticketId": "syn-e198f7a9-bfe9-45a8-87a0-b69176deb5d2"
+            }
+          },
+          "hash": "b841f902c63cc7e1321aa38ac68062a8434e239e689f90c809ae6d171d20dfb7",
+          "previous": "47aa6caf9719fa8272a9ca802c1aa8a99d9ec30c631635b87ad34b4e7e951098",
+          "principal": "worker-a",
+          "role": "worker",
+          "seq": 8,
+          "type": "action.completed"
+        },
+        {
+          "at": 1792448873482,
+          "data": {
+            "cost": 1,
+            "kind": "verify",
+            "nodeId": "verify"
+          },
+          "hash": "03169fec7eb5bc47511ab46dce82f3d323f542e8f46414fa5b37a1af8c5505e4",
+          "previous": "b841f902c63cc7e1321aa38ac68062a8434e239e689f90c809ae6d171d20dfb7",
+          "principal": "worker-cli",
+          "role": "worker",
+          "seq": 9,
+          "type": "node.completed"
+        },
+        {
+          "at": 1792448873482,
+          "data": {
+            "spent": 6,
+            "steps": 4
+          },
+          "hash": "cecbd1e9a1660db7d5ca45b5505488514540c0d2b603b414f0a831a327c27091",
+          "previous": "03169fec7eb5bc47511ab46dce82f3d323f542e8f46414fa5b37a1af8c5505e4",
+          "principal": "worker-cli",
+          "role": "worker",
+          "seq": 10,
+          "type": "run.completed"
+        }
+      ]
+    }
+  ]
+}

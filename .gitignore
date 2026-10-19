@@ -1,0 +1,9 @@
+node_modules/
+build/
+web/dist/
+.runtime/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+.DS_Store
+coverage/

@@ -4,9 +4,35 @@
 
 **[Open the interactive demo →](https://bernardo-demier-ai-lab.fancy-fly-9200.chatgpt.site/agent-runtime-lab/)** · [Observed fault report](artifacts/observed-fault-matrix.json) · [Architecture](docs/architecture.md) · [Threat model](docs/threat-model.md)
 
+**[Inspect the public KEV application →](https://bernardo-demier-ai-lab.fancy-fly-9200.chatgpt.site/agent-runtime-lab/kev.html)** — real public evidence, a recorded local model draft, crash/recovery results, browser file-hash verification, and downloadable analyst deliverables. This page inspects a recorded run; use the interactive lab above to exercise state transitions.
+
 Research an incident → propose a ticket → obtain independent approval → execute → verify the receipt. The runtime persists each decision and makes the uncertain cases visible. The browser demo uses the **same TypeScript transition core** as the SQLite worker; it is an executable lab, not a recorded trace.
 
-The planner and ticket service are deterministic synthetic fixtures. This project demonstrates **AI execution infrastructure**, independent of the model that proposes a plan. It does not call an LLM, pretend that rules are inference, or use employer/customer data.
+The browser planner and ticket service are deterministic synthetic fixtures. The Node runtime also supports a **real analyst workflow**: public CISA KEV evidence from [Policy RAG Lab](https://github.com/demier-demier/policy-rag-lab) → exact report preview → approval → versioned Markdown/JSON files → file-hash verification. An optional model draft can be imported with model, prompt, citation, and usage provenance. This runtime makes no hidden model calls and uses no employer/customer data.
+
+## Real application: an approved vulnerability review
+
+An analyst can turn retrieved public vulnerability evidence into a traceable review packet, while keeping **known exploitation** separate from **unconfirmed applicability to their assets**. The result is an actual local file deliverable, published through the same SQLite checkpoint, approval, lease, and outbox engine used by the failure lab.
+
+```sh
+# Build both projects; export a packet using Policy RAG Lab's KEV command first.
+npm ci
+npm run build
+node build/cli.js review preview \
+  --packet ../policy-rag-lab/data/kev/example-packet.json \
+  --output .runtime/reviews --run kev-review-001
+
+# Read the complete report in the preview; copy its exact "binding" value.
+node build/cli.js review approve --run kev-review-001 --binding COPY_PREVIEW_BINDING
+node build/cli.js review execute --run kev-review-001
+node build/cli.js review verify --run kev-review-001
+```
+
+The output directory contains `review-<idempotency-key>/review.md`, `review.json`, and a hash manifest. Approval expires after five minutes. A new packet, destination, or draft requires a new run and approval. Existing artifacts are never silently overwritten; changed or unrelated files block recovery. Analysts should make working copies for annotations and retain the original evidence artifact.
+
+No asset inventory is supplied by this example. It does not establish affected versions, exposure, a local severity, or an organizational remediation deadline. It does not scan or patch systems. The CLI's role labels demonstrate the authorization boundary; they are **not authenticated human identities**.
+
+See the [complete KEV workflow and optional model-draft contract](docs/kev-review.md). The online browser demo continues to use synthetic tickets; this file-producing integration runs locally.
 
 ## Try the failure boundary in two minutes
 
@@ -32,6 +58,7 @@ Browser identities, policy ownership, and the remote ticket service are simulati
 | Unknown outcomes        | A connector without an idempotency contract is never retried automatically after an interrupted dispatch. A reviewer must reconcile the remote receipt.                                                   |
 | Evidence                | SHA-256 linked event records, snapshot/log/outbox consistency checks, JSON exports, and an observed fault report produced by running the system.                                                          |
 | Browser lab             | Shared core, transactional IndexedDB persistence, local effect store, editable policy/arguments, interruption injection, recovery, hash verification, and run export. No runtime CDN or API calls.        |
+| Public-data application | Validated CISA KEV evidence packet, optional citation-bound model draft, exact-byte approval, versioned filesystem delivery, and actual file-hash verification at recovery and completion.                |
 
 Cost budgets are **synthetic execution units**: one unit per local research/proposal/verification node and three for the ticket fixture. They are not dollars, tokens, or measured model usage. Step and dispatch-attempt limits are independent.
 
@@ -90,13 +117,13 @@ node build/cli.js inspect --db .runtime/run.sqlite --run example
 
 Use `--non-idempotent` on `init` for the uncertain connector case. After recovery enters `unknown`, the `reconcile` command queries remote evidence and submits it under the synthetic reviewer identity. The CLI is a local lab, **not an authenticated multi-user service**.
 
-Library entry points are `build/core.js`, `build/sqlite.js`, and `build/worker.js`; generated TypeScript declarations are included in `build/`. `transition` is pure. `SqliteStore.update` combines validation with a locked, fenced persistence operation. `tick` advances one durable unit and delegates only the closed synthetic ticket action to the connector interface.
+Library entry points are `build/core.js`, `build/sqlite.js`, `build/worker.js`, and `build/kev-review.js`; generated TypeScript declarations are included in `build/`. `transition` is pure. `SqliteStore.update` combines validation with a locked, fenced persistence operation. `tick` advances one durable unit and delegates the closed ticket or review-publication action to its connector.
 
 ## Honest boundaries
 
 Authorization linearizes at the atomic `dispatch.started` transition. A later revocation cannot recall a request already admitted or in flight. A lease fences local commits; it cannot revoke a packet already sent to a remote system.
 
-This does **not** guarantee exactly-once effects for arbitrary APIs. The observed single effect depends on the synthetic connector’s durable idempotency contract. Hash chains detect inconsistency in a trusted store; an attacker able to rewrite the entire store can rehash it. Authentication, signed attestations, credential vaults, multi-host scheduling, production connectors, compensation, multiple side effects per plan, and LLM planning are outside this implementation.
+This does **not** guarantee exactly-once effects for arbitrary APIs. The observed single effect depends on the connector's idempotency contract: a durable synthetic ticket record or a verified local review directory. Hash chains detect inconsistency in a trusted store; an attacker able to rewrite the entire store can rehash it. Authentication, signed attestations, credential vaults, multi-host scheduling, hosted production services, compensation, multiple side effects per plan, and LLM planning are outside this implementation.
 
 See [state invariants and recovery semantics](docs/architecture.md), [ADRs](docs/decisions.md), [threat model](docs/threat-model.md), and [data provenance](PROVENANCE.md).
 

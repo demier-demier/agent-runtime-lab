@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta
+      name="description"
+      content="Inspect a real public vulnerability-review workflow: CISA evidence, a local model draft, exact approval, process crash recovery, and verified files."
+    />
+    <title>KEV Evidence Review · Agent Runtime Lab</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./kev.css" />
+    <script type="module" src="./kev.js"></script>
+  </head>
+  <body>
+    <div class="shell kev-shell">
+      <header class="topbar">
+        <a href="../">← All demos</a>
+        <a class="wordmark" href="./">
+          <span class="brandmark">a/r</span> AGENT RUNTIME LAB
+        </a>
+        <a href="https://github.com/demier-demier/agent-runtime-lab"
+          >Source ↗</a
+        >
+      </header>
+      <main>
+        <section class="hero kev-hero">
+          <div>
+            <div class="eyebrow">REAL APPLICATION / PUBLIC CISA EVIDENCE</div>
+            <h1>An analyst review.<br /><span>A verified delivery.</span></h1>
+            <p class="intro">
+              Follow public vulnerability evidence into an approved report.
+              Inspect what survived a real worker crash, then download the exact
+              files.
+            </p>
+            <div class="hero-links">
+              <a class="button primary" href="#evidence"
+                >Inspect the evidence ↓</a
+              >
+              <a class="button secondary" href="./"
+                >Try the interactive failure lab ↗</a
+              >
+            </div>
+          </div>
+          <aside class="hero-note">
+            <strong>Recorded execution. Inspectable artifacts.</strong>
+            <p>
+              This page reads the published files from a real local run. Browser
+              checks recompute their SHA-256 hashes. It does not execute a
+              worker or a model on your computer.
+            </p>
+            <div class="small-tags">
+              <span>PUBLIC DATA</span><span>NO INSTALL</span>
+            </div>
+          </aside>
+        </section>
+
+        <div id="notice" class="notice" role="status" aria-live="polite">
+          Loading the recorded delivery and checking file hashes…
+        </div>
+        <noscript
+          ><p>
+            This evidence viewer requires JavaScript. The downloadable Markdown
+            and JSON remain available below.
+          </p></noscript
+        >
+
+        <div
+          class="metrics kev-metrics"
+          aria-label="Observed execution results"
+        >
+          <div><span>FINAL STATE</span><strong id="final-state">—</strong></div>
+          <div>
+            <span>PUBLICATIONS</span><strong id="publication-count">—</strong>
+          </div>
+          <div>
+            <span>DISPATCH ATTEMPTS</span><strong id="attempt-count">—</strong>
+          </div>
+          <div>
+            <span>DOCUMENTS RETRIEVED</span
+            ><strong id="document-count">—</strong>
+          </div>
+        </div>
+
+        <section class="boundary">
+          <strong>Applicability: unconfirmed</strong>
+          <p>
+            A CISA KEV listing records known exploitation. This example has no
+            asset inventory and does not establish affected systems, local
+            severity, or organizational deadlines. Approval in the recorded run
+            was automated integration-test approval, not human review.
+          </p>
+        </section>
+
+        <section class="card recovery-card" aria-labelledby="recovery-title">
+          <div class="card-heading">
+            <div>
+              <div class="section-number">01 / OBSERVED FAILURE BOUNDARY</div>
+              <h2 id="recovery-title">
+                Files written. Worker stopped. Receipt recovered.
+              </h2>
+            </div>
+            <span id="observed-at" class="pill">Loading timestamp…</span>
+          </div>
+          <ol class="recovery-stages">
+            <li>
+              <span>01</span>
+              <h3>Approve exact bytes</h3>
+              <p>
+                Packet, optional draft, report and destination are bound to one
+                approval.
+              </p>
+            </li>
+            <li>
+              <span>02</span>
+              <h3>Publish, then crash</h3>
+              <p id="crash-observation">Reading the observed process result…</p>
+            </li>
+            <li>
+              <span>03</span>
+              <h3>Recover actual files</h3>
+              <p id="recovery-observation">Reading the recovered receipt…</p>
+            </li>
+            <li>
+              <span>04</span>
+              <h3>Verify delivery</h3>
+              <p id="file-observation">
+                Checking whether the original files changed…
+              </p>
+            </li>
+          </ol>
+          <details class="evidence-details">
+            <summary>Inspect the recorded event sequence</summary>
+            <p id="chain-observation" class="hint"></p>
+            <ol id="event-sequence" class="event-sequence"></ol>
+            <p class="hint">
+              The event-chain result was computed by the local evaluation. This
+              page independently verifies the downloadable files against the
+              published hash record.
+            </p>
+          </details>
+        </section>
+
+        <div class="kev-columns">
+          <section
+            id="evidence"
+            class="card evidence-list-card"
+            aria-labelledby="evidence-title"
+          >
+            <div class="section-number">02 / RETRIEVED PUBLIC EVIDENCE</div>
+            <h2 id="evidence-title">The records behind the review</h2>
+            <p class="query-label">Retrieval query</p>
+            <p id="query" class="query-text">—</p>
+            <p class="hint">
+              Retrieved relevance is not an asset match. Related results may
+              describe different vendors or products.
+            </p>
+            <label for="record-filter"
+              >Filter these records by CVE, vendor or product</label
+            >
+            <input
+              id="record-filter"
+              type="search"
+              placeholder="For example: Ivanti"
+              autocomplete="off"
+            />
+            <p
+              id="filter-count"
+              class="hint"
+              role="status"
+              aria-live="polite"
+            ></p>
+            <div id="records" class="records"></div>
+          </section>
+
+          <aside class="kev-sidebar">
+            <section class="card provenance-card">
+              <div class="section-number">03 / SOURCE PROVENANCE</div>
+              <h2>A dated, reproducible snapshot</h2>
+              <dl id="source-facts" class="facts"></dl>
+              <a
+                id="catalog-source"
+                class="text-link"
+                href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+                >Open the exact source snapshot ↗</a
+              >
+              <details class="evidence-details">
+                <summary>Inspect source and packet hashes</summary>
+                <p class="hash-label">CATALOG SHA-256</p>
+                <code id="catalog-hash" class="hash"></code>
+                <p class="hash-label">EVIDENCE PACKET SHA-256</p>
+                <code id="packet-hash" class="hash"></code>
+              </details>
+              <p class="hint">
+                A matching hash checks consistency, not source authenticity.
+                Refresh the catalog before an operational review.
+              </p>
+            </section>
+            <section class="card draft-card">
+              <div class="section-number">04 / OPTIONAL LOCAL MODEL DRAFT</div>
+              <h2>Suggestions for analyst review</h2>
+              <span class="warning-tag">UNVERIFIED MODEL OUTPUT</span>
+              <div id="draft-content">
+                <p class="hint">Reading the recorded model draft…</p>
+              </div>
+            </section>
+          </aside>
+        </div>
+
+        <section class="card downloads-card" aria-labelledby="download-title">
+          <div class="card-heading">
+            <div>
+              <div class="section-number">05 / EXACT DELIVERABLES</div>
+              <h2 id="download-title">Take the evidence with you.</h2>
+            </div>
+            <button id="verify-files" class="button secondary" type="button">
+              Recheck downloaded bytes
+            </button>
+          </div>
+          <div class="download-links">
+            <a
+              class="download-item"
+              href="./kev-data/review.md"
+              download="kev-review.md"
+              ><strong>Analyst review</strong
+              ><span>Markdown · sources, excerpts and checklist ↓</span></a
+            >
+            <a
+              class="download-item"
+              href="./kev-data/review.json"
+              download="kev-review.json"
+              ><strong>Evidence packet</strong
+              ><span>JSON · retrieval and model provenance ↓</span></a
+            >
+            <a
+              class="download-item"
+              href="./kev-data/observed-delivery.json"
+              download="kev-observed-delivery.json"
+              ><strong>Execution record</strong
+              ><span>JSON · crash, recovery and file hashes ↓</span></a
+            >
+          </div>
+          <div id="hash-checks" class="hash-checks"></div>
+          <details class="evidence-details">
+            <summary>Read the exact Markdown report</summary>
+            <pre id="report-preview" class="report-preview"></pre>
+          </details>
+        </section>
+      </main>
+      <footer>
+        <p>
+          Public CISA data. Original implementation. No employer or customer
+          material.
+        </p>
+        <p>
+          <a
+            href="https://github.com/demier-demier/agent-runtime-lab/blob/main/docs/kev-review.md"
+            >Reproduce this workflow ↗</a
+          ><span>·</span> Built by Bernardo Demier
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

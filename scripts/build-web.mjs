@@ -13,9 +13,23 @@ await build({
   format: "esm",
   legalComments: "eof",
 });
-for (const file of ["index.html", "style.css"])
+await build({
+  entryPoints: ["web/kev.ts"],
+  outfile: "web/dist/kev.js",
+  bundle: true,
+  minify: true,
+  sourcemap: false,
+  target: ["es2022"],
+  platform: "browser",
+  format: "esm",
+  legalComments: "eof",
+});
+for (const file of ["index.html", "style.css", "kev.html", "kev.css"])
   await copyFile(`web/${file}`, `web/dist/${file}`);
-const sources = ["src/core.ts", "src/indexeddb.ts", "web/app.ts"];
+await mkdir("web/dist/kev-data", { recursive: true });
+for (const file of ["review.md", "review.json", "observed-delivery.json"])
+  await copyFile(`artifacts/kev-review/${file}`, `web/dist/kev-data/${file}`);
+const sources = ["src/core.ts", "src/indexeddb.ts", "web/app.ts", "web/kev.ts"];
 const manifest = {
   build: "agent-runtime-browser-v1",
   sharedCore: true,

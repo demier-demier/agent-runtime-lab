@@ -4,6 +4,7 @@ import { createRun, DEFAULT_TOOL, verifyChain } from "./core.js";
 import { SqliteStore } from "./sqlite.js";
 import { TicketStore, serveTickets, httpConnector } from "./connector.js";
 import { apply, tick } from "./worker.js";
+import { reviewCli } from "./review-cli.js";
 
 const [command = "help", ...args] = process.argv.slice(2);
 const option = (name: string, fallback: string) => {
@@ -15,7 +16,9 @@ const tenant = option("tenant", "demo");
 const id = option("run", "research-demo");
 const actor = (role: "reviewer" | "operator") => ({ tenant, id: role, role });
 try {
-  if (command === "serve") {
+  if (command === "review") {
+    await reviewCli(args);
+  } else if (command === "serve") {
     const path = resolve(option("db", ".runtime/remote-tickets.sqlite"));
     mkdirSync(dirname(path), { recursive: true });
     const tickets = new TicketStore(path);

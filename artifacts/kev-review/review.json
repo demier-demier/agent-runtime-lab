@@ -1,0 +1,421 @@
+{
+  "schemaVersion": "kev-review/v1",
+  "runId": "observed-public-kev-review",
+  "tenant": "analyst",
+  "createdAt": "2026-10-20T10:25:08.706Z",
+  "evidenceSha256": "7f25e636887316ef969ec3c4a64e653ff0348baa8b51ce947d7d2dbd4fc4331f",
+  "applicability": "unconfirmed",
+  "scope": "Public CISA KEV evidence selected by the query. No asset inventory was matched; no vulnerability scan, patch, or ticket-system update was performed.",
+  "deadlineScope": "CISA dueDate applies to the relevant federal directive scope; it is not asserted as this analyst's organizational deadline.",
+  "evidence": {
+    "schemaVersion": "kev-evidence/v1",
+    "generatedAt": "2026-10-20T00:33:32.403Z",
+    "query": "Ivanti Connect Secure authentication bypass",
+    "source": {
+      "url": "https://raw.githubusercontent.com/cisagov/kev-data/6a392940c663b52271fa4e6aa7b39995b18c9a71/known_exploited_vulnerabilities.json",
+      "retrievedAt": "2026-10-20T00:32:46.497Z",
+      "sha256": "b6e27975f6635ecfc546fbd4fd6e444ba63a07ab2abc8876229d77fe083d357d",
+      "catalogVersion": "2026.10.16",
+      "dateReleased": "2026-10-16T17:15:48.8752Z",
+      "totalRecords": 1748,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://github.com/cisagov/kev-data/blob/develop/LICENSE"
+    },
+    "documents": [
+      {
+        "id": "CVE-2026-104935",
+        "cveID": "CVE-2026-104935",
+        "title": "CVE-2026-104935",
+        "text": "Ivanti Connect Secure Authentication Bypass by Spoofing Vulnerability\nVendor: Ivanti\nProduct: Connect Secure\nIvanti Connect Secure contains an authentication bypass by spoofing vulnerability that allows a remote unauthenticated attacker to execute arbitrary commands.\nCISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\nAdded to KEV: 2026-10-13\nCISA due date (source field): 2026-10-16\nKnown ransomware campaign use: Unknown\nSource: https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-104935",
+        "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-104935",
+        "contentSha256": "03e634e31e8e608f9f061e9a6dc45891ad1ae4c13608bfd41d09d23ea119eb53",
+        "record": {
+          "vendorProject": "Ivanti",
+          "product": "Connect Secure",
+          "dateAdded": "2026-10-13",
+          "dueDate": "2026-10-16",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "knownRansomwareCampaignUse": "Unknown"
+        }
+      },
+      {
+        "id": "CVE-2026-18577",
+        "cveID": "CVE-2026-18577",
+        "title": "CVE-2026-18577",
+        "text": "N-able N-central Authentication Bypass Using an Alternate Path or Channel Vulnerability\nVendor: N-able\nProduct: N-central\nN-able N-central contains an authentication bypass using an alternate path or channel allows for authentication bypass and account takeover in N-central. This vulnerability is the result of an incomplete patch for CVE-2026-18556.\nCISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\nAdded to KEV: 2026-08-03\nCISA due date (source field): 2026-08-06\nKnown ransomware campaign use: Unknown\nSource: https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-18577",
+        "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-18577",
+        "contentSha256": "778444ecbe2a213d05b19601211d87a0b012c056bea43e457e2472196e6b0df7",
+        "record": {
+          "vendorProject": "N-able",
+          "product": "N-central",
+          "dateAdded": "2026-08-03",
+          "dueDate": "2026-08-06",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "knownRansomwareCampaignUse": "Unknown"
+        }
+      },
+      {
+        "id": "CVE-2026-18556",
+        "cveID": "CVE-2026-18556",
+        "title": "CVE-2026-18556",
+        "text": "N-able N-central Authentication Bypass Using an Alternate Path or Channel Vulnerability\nVendor: N-able\nProduct: N-central\nN-able N-central contains an authentication bypass using an alternate path or channel that allows for authentication bypass.\nCISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\nAdded to KEV: 2026-08-04\nCISA due date (source field): 2026-08-07\nKnown ransomware campaign use: Unknown\nSource: https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-18556",
+        "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-18556",
+        "contentSha256": "2d1a2c3c4d38ab1e984d3c7d55a64dc60940e4e88bfcc49beee79169a9d86462",
+        "record": {
+          "vendorProject": "N-able",
+          "product": "N-central",
+          "dateAdded": "2026-08-04",
+          "dueDate": "2026-08-07",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "knownRansomwareCampaignUse": "Unknown"
+        }
+      },
+      {
+        "id": "CVE-2026-19490",
+        "cveID": "CVE-2026-19490",
+        "title": "CVE-2026-19490",
+        "text": "Citrix NetScaler Authentication Bypass Using an Alternate Path or Channel Vulnerability\nVendor: Citrix\nProduct: NetScaler\nCitrix NetScaler ADC and NetScaler Gateway contain an authentication-bypass vulnerability involving an alternate path or channel. When the NetScaler appliance is configured as an AAA virtual server or as a Gateway (SSL VPN, ICA Proxy, CVPN, or RDP Proxy), an unauthenticated remote threat actor may be able to bypass authentication.\nCISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\nAdded to KEV: 2026-09-09\nCISA due date (source field): 2026-09-12\nKnown ransomware campaign use: Unknown\nSource: https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-19490",
+        "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-19490",
+        "contentSha256": "0d30d19ff4a2a912c91d7240eabeffc85e088cae7355926620591e7af144d094",
+        "record": {
+          "vendorProject": "Citrix",
+          "product": "NetScaler",
+          "dateAdded": "2026-09-09",
+          "dueDate": "2026-09-12",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "knownRansomwareCampaignUse": "Unknown"
+        }
+      },
+      {
+        "id": "CVE-2026-20079",
+        "cveID": "CVE-2026-20079",
+        "title": "CVE-2026-20079",
+        "text": "Cisco Firewall Management Center Authentication Bypass Using an Alternate Path or Channel Vulnerability\nVendor: Cisco\nProduct: Secure Firewall Management Center (FMC) and Security Cloud Control (SCC) Firewall Management\nCisco Secure Firewall Management Center (FMC) Software and Cisco Security Cloud Control (SCC) Firewall Management contain an authentication Bypass using an alternate path or channel vulnerability that could allow an unauthenticated, remote attacker to bypass authentication and execute script files on an affected device to obtain root access to the underlying operating system.\nCISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\nAdded to KEV: 2026-09-09\nCISA due date (source field): 2026-09-12\nKnown ransomware campaign use: Unknown\nSource: https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-20079",
+        "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-20079",
+        "contentSha256": "57e660f5747495da71b6bfc8a52f942449cb6f2397ef6dfcb78ea67a9ea1c3a1",
+        "record": {
+          "vendorProject": "Cisco",
+          "product": "Secure Firewall Management Center (FMC) and Security Cloud Control (SCC) Firewall Management",
+          "dateAdded": "2026-09-09",
+          "dueDate": "2026-09-12",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "knownRansomwareCampaignUse": "Unknown"
+        }
+      }
+    ],
+    "retrieval": {
+      "method": "hybrid",
+      "principal": {
+        "id": "kev-analyst",
+        "tenant": "public-kev",
+        "roles": [
+          "reader"
+        ]
+      },
+      "receipt": {
+        "schema": 1,
+        "principalHash": "4fd431aa2f352d310686afa7d0f43faf5cd6dc24a1c27de82e38560ea72b6d34",
+        "tenant": "public-kev",
+        "queryHash": "5c65218e27319d199aec60c56c0289e9b34321fc8ac50a16ccf0a94c871b8adb",
+        "vectorHash": "23bb01fcae9331c66b914391f07c7a7505c5d5633c5b85ea1810961ada8397a0",
+        "method": "hybrid",
+        "issuedAt": 1792456412403,
+        "epoch": {
+          "policy": 1,
+          "content": 1,
+          "index": 1
+        },
+        "budgetBytes": 16000,
+        "citations": [
+          {
+            "id": "CVE-2026-104935",
+            "version": 1,
+            "documentHash": "f26adfc58f30e96e70176be7386f06db9db4376f5981aaca468624e1cb73af9e",
+            "title": "CVE-2026-104935",
+            "text": "Ivanti Connect Secure Authentication Bypass by Spoofing Vulnerability\nVendor: Ivanti\nProduct: Connect Secure\nIvanti Connect Secure contains an authentication bypass by spoofing vulnerability that allows a remote unauthenticated attacker to execute arbitrary commands.\nCISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\nAdded to KEV: 2026-10-13\nCISA due date (source field): 2026-10-16\nKnown ransomware campaign use: Unknown\nSource: https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-104935"
+          },
+          {
+            "id": "CVE-2026-18577",
+            "version": 1,
+            "documentHash": "3323a84d1727b89bfe89f7a70115dd360e0dd311f044885b4987ec35e331a6e5",
+            "title": "CVE-2026-18577",
+            "text": "N-able N-central Authentication Bypass Using an Alternate Path or Channel Vulnerability\nVendor: N-able\nProduct: N-central\nN-able N-central contains an authentication bypass using an alternate path or channel allows for authentication bypass and account takeover in N-central. This vulnerability is the result of an incomplete patch for CVE-2026-18556.\nCISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\nAdded to KEV: 2026-08-03\nCISA due date (source field): 2026-08-06\nKnown ransomware campaign use: Unknown\nSource: https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-18577"
+          },
+          {
+            "id": "CVE-2026-18556",
+            "version": 1,
+            "documentHash": "97648db04256c80b40d73b3fb383f48114782817409b01b2c41f25227331fb03",
+            "title": "CVE-2026-18556",
+            "text": "N-able N-central Authentication Bypass Using an Alternate Path or Channel Vulnerability\nVendor: N-able\nProduct: N-central\nN-able N-central contains an authentication bypass using an alternate path or channel that allows for authentication bypass.\nCISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\nAdded to KEV: 2026-08-04\nCISA due date (source field): 2026-08-07\nKnown ransomware campaign use: Unknown\nSource: https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-18556"
+          },
+          {
+            "id": "CVE-2026-19490",
+            "version": 1,
+            "documentHash": "e5701f7356fa3d74674d99c5017952a5a1c9f7fe94a041fd8b15176384e3d0f5",
+            "title": "CVE-2026-19490",
+            "text": "Citrix NetScaler Authentication Bypass Using an Alternate Path or Channel Vulnerability\nVendor: Citrix\nProduct: NetScaler\nCitrix NetScaler ADC and NetScaler Gateway contain an authentication-bypass vulnerability involving an alternate path or channel. When the NetScaler appliance is configured as an AAA virtual server or as a Gateway (SSL VPN, ICA Proxy, CVPN, or RDP Proxy), an unauthenticated remote threat actor may be able to bypass authentication.\nCISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\nAdded to KEV: 2026-09-09\nCISA due date (source field): 2026-09-12\nKnown ransomware campaign use: Unknown\nSource: https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-19490"
+          },
+          {
+            "id": "CVE-2026-20079",
+            "version": 1,
+            "documentHash": "a832022ebcf72b37d999393157d08890c394cfe4d98ba30d446e3afba1687c24",
+            "title": "CVE-2026-20079",
+            "text": "Cisco Firewall Management Center Authentication Bypass Using an Alternate Path or Channel Vulnerability\nVendor: Cisco\nProduct: Secure Firewall Management Center (FMC) and Security Cloud Control (SCC) Firewall Management\nCisco Secure Firewall Management Center (FMC) Software and Cisco Security Cloud Control (SCC) Firewall Management contain an authentication Bypass using an alternate path or channel vulnerability that could allow an unauthenticated, remote attacker to bypass authentication and execute script files on an affected device to obtain root access to the underlying operating system.\nCISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\nAdded to KEV: 2026-09-09\nCISA due date (source field): 2026-09-12\nKnown ransomware campaign use: Unknown\nSource: https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-20079"
+          }
+        ],
+        "contextHash": "d2e50e8e2b1bbb9484e48357473f8c3196571d6c2f4770c44ae6624a2ab2b12f",
+        "digest": "5056cc2a1979722d3635a7ca6ef3875b9c598488ce859df377f60520c784d79d"
+      },
+      "context": "[evidence CVE-2026-104935 · version 1 · sha256:f26adfc58f30e96e70176be7386f06db9db4376f5981aaca468624e1cb73af9e]\nCVE-2026-104935\nIvanti Connect Secure Authentication Bypass by Spoofing Vulnerability\nVendor: Ivanti\nProduct: Connect Secure\nIvanti Connect Secure contains an authentication bypass by spoofing vulnerability that allows a remote unauthenticated attacker to execute arbitrary commands.\nCISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\nAdded to KEV: 2026-10-13\nCISA due date (source field): 2026-10-16\nKnown ransomware campaign use: Unknown\nSource: https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-104935\n\n[evidence CVE-2026-18577 · version 1 · sha256:3323a84d1727b89bfe89f7a70115dd360e0dd311f044885b4987ec35e331a6e5]\nCVE-2026-18577\nN-able N-central Authentication Bypass Using an Alternate Path or Channel Vulnerability\nVendor: N-able\nProduct: N-central\nN-able N-central contains an authentication bypass using an alternate path or channel allows for authentication bypass and account takeover in N-central. This vulnerability is the result of an incomplete patch for CVE-2026-18556.\nCISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\nAdded to KEV: 2026-08-03\nCISA due date (source field): 2026-08-06\nKnown ransomware campaign use: Unknown\nSource: https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-18577\n\n[evidence CVE-2026-18556 · version 1 · sha256:97648db04256c80b40d73b3fb383f48114782817409b01b2c41f25227331fb03]\nCVE-2026-18556\nN-able N-central Authentication Bypass Using an Alternate Path or Channel Vulnerability\nVendor: N-able\nProduct: N-central\nN-able N-central contains an authentication bypass using an alternate path or channel that allows for authentication bypass.\nCISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\nAdded to KEV: 2026-08-04\nCISA due date (source field): 2026-08-07\nKnown ransomware campaign use: Unknown\nSource: https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-18556\n\n[evidence CVE-2026-19490 · version 1 · sha256:e5701f7356fa3d74674d99c5017952a5a1c9f7fe94a041fd8b15176384e3d0f5]\nCVE-2026-19490\nCitrix NetScaler Authentication Bypass Using an Alternate Path or Channel Vulnerability\nVendor: Citrix\nProduct: NetScaler\nCitrix NetScaler ADC and NetScaler Gateway contain an authentication-bypass vulnerability involving an alternate path or channel. When the NetScaler appliance is configured as an AAA virtual server or as a Gateway (SSL VPN, ICA Proxy, CVPN, or RDP Proxy), an unauthenticated remote threat actor may be able to bypass authentication.\nCISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\nAdded to KEV: 2026-09-09\nCISA due date (source field): 2026-09-12\nKnown ransomware campaign use: Unknown\nSource: https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-19490\n\n[evidence CVE-2026-20079 · version 1 · sha256:a832022ebcf72b37d999393157d08890c394cfe4d98ba30d446e3afba1687c24]\nCVE-2026-20079\nCisco Firewall Management Center Authentication Bypass Using an Alternate Path or Channel Vulnerability\nVendor: Cisco\nProduct: Secure Firewall Management Center (FMC) and Security Cloud Control (SCC) Firewall Management\nCisco Secure Firewall Management Center (FMC) Software and Cisco Security Cloud Control (SCC) Firewall Management contain an authentication Bypass using an alternate path or channel vulnerability that could allow an unauthenticated, remote attacker to bypass authentication and execute script files on an affected device to obtain root access to the underlying operating system.\nCISA required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\nAdded to KEV: 2026-09-09\nCISA due date (source field): 2026-09-12\nKnown ransomware campaign use: Unknown\nSource: https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-20079",
+      "ranking": [
+        {
+          "id": "CVE-2026-104935",
+          "score": 0.03278688524590164,
+          "title": "CVE-2026-104935",
+          "version": 1
+        },
+        {
+          "id": "CVE-2026-18577",
+          "score": 0.0315136476426799,
+          "title": "CVE-2026-18577",
+          "version": 1
+        },
+        {
+          "id": "CVE-2026-18556",
+          "score": 0.03149801587301587,
+          "title": "CVE-2026-18556",
+          "version": 1
+        },
+        {
+          "id": "CVE-2026-19490",
+          "score": 0.029437229437229435,
+          "title": "CVE-2026-19490",
+          "version": 1
+        },
+        {
+          "id": "CVE-2026-20079",
+          "score": 0.016129032258064516,
+          "title": "CVE-2026-20079",
+          "version": 1
+        },
+        {
+          "id": "CVE-2026-48558",
+          "score": 0.015873015873015872,
+          "title": "CVE-2026-48558",
+          "version": 1
+        },
+        {
+          "id": "CVE-2026-72529",
+          "score": 0.015625,
+          "title": "CVE-2026-72529",
+          "version": 1
+        },
+        {
+          "id": "CVE-2026-59822",
+          "score": 0.015384615384615385,
+          "title": "CVE-2026-59822",
+          "version": 1
+        },
+        {
+          "id": "CVE-2026-81578",
+          "score": 0.015151515151515152,
+          "title": "CVE-2026-81578",
+          "version": 1
+        },
+        {
+          "id": "CVE-2026-20349",
+          "score": 0.014925373134328358,
+          "title": "CVE-2026-20349",
+          "version": 1
+        }
+      ],
+      "eligibleCount": 120,
+      "snapshotDigest": "388319a04b995bc55c93088147122d56f58723762fd8f412a2e8bf28cc5ce003",
+      "exportedAt": "2026-10-20T00:33:32.403Z"
+    },
+    "selection": {
+      "strategy": "dateAdded-desc-cveID-asc",
+      "limit": 120,
+      "selectedIds": [
+        "CVE-2025-61624",
+        "CVE-2026-102764",
+        "CVE-2026-21589",
+        "CVE-2026-0322",
+        "CVE-2026-105133",
+        "CVE-2026-105134",
+        "CVE-2026-76519",
+        "CVE-2026-104935",
+        "CVE-2026-96951",
+        "CVE-2015-3306",
+        "CVE-2015-5477",
+        "CVE-2016-3081",
+        "CVE-2021-3199",
+        "CVE-2023-22894",
+        "CVE-2026-88779",
+        "CVE-2026-102489",
+        "CVE-2026-102490",
+        "CVE-2026-104286",
+        "CVE-2026-76504",
+        "CVE-2026-86950",
+        "CVE-2026-88771",
+        "CVE-2026-88772",
+        "CVE-2026-65660",
+        "CVE-2026-67279",
+        "CVE-2026-87902",
+        "CVE-2026-5430",
+        "CVE-2026-71362",
+        "CVE-2026-85102",
+        "CVE-2026-93616",
+        "CVE-2026-93952",
+        "CVE-2026-94127",
+        "CVE-2026-7273",
+        "CVE-2025-39682",
+        "CVE-2025-39964",
+        "CVE-2026-53266",
+        "CVE-2026-58704",
+        "CVE-2026-76460",
+        "CVE-2026-87886",
+        "CVE-2026-76461",
+        "CVE-2026-42016",
+        "CVE-2026-42018",
+        "CVE-2026-84869",
+        "CVE-2026-85706",
+        "CVE-2026-67277",
+        "CVE-2026-86060",
+        "CVE-2025-25249",
+        "CVE-2026-19490",
+        "CVE-2026-20079",
+        "CVE-2026-87491",
+        "CVE-2026-75650",
+        "CVE-2026-81963",
+        "CVE-2026-85880",
+        "CVE-2026-86218",
+        "CVE-2026-85046",
+        "CVE-2026-48710",
+        "CVE-2026-49869",
+        "CVE-2026-59822",
+        "CVE-2026-82329",
+        "CVE-2026-83548",
+        "CVE-2026-83549",
+        "CVE-2026-9586",
+        "CVE-2026-81578",
+        "CVE-2026-82078",
+        "CVE-2023-49105",
+        "CVE-2026-53362",
+        "CVE-2026-66384",
+        "CVE-2015-3246",
+        "CVE-2015-5287",
+        "CVE-2019-1068",
+        "CVE-2021-23758",
+        "CVE-2022-0995",
+        "CVE-2026-8452",
+        "CVE-2026-60004",
+        "CVE-2026-21962",
+        "CVE-2026-73570",
+        "CVE-2026-72529",
+        "CVE-2026-72530",
+        "CVE-2026-64849",
+        "CVE-2026-33824",
+        "CVE-2026-55040",
+        "CVE-2026-59310",
+        "CVE-2026-65400",
+        "CVE-2025-62593",
+        "CVE-2026-20349",
+        "CVE-2026-68820",
+        "CVE-2026-72898",
+        "CVE-2026-8037",
+        "CVE-2026-63077",
+        "CVE-2026-18556",
+        "CVE-2026-34486",
+        "CVE-2026-9198",
+        "CVE-2026-18577",
+        "CVE-2026-20316",
+        "CVE-2025-68686",
+        "CVE-2026-16812",
+        "CVE-2026-16232",
+        "CVE-2026-50522",
+        "CVE-2021-27137",
+        "CVE-2026-0770",
+        "CVE-2026-60137",
+        "CVE-2026-63030",
+        "CVE-2026-25089",
+        "CVE-2026-39808",
+        "CVE-2026-58644",
+        "CVE-2023-4346",
+        "CVE-2026-46817",
+        "CVE-2026-15409",
+        "CVE-2026-15410",
+        "CVE-2026-56155",
+        "CVE-2026-56164",
+        "CVE-2008-4128",
+        "CVE-2026-48939",
+        "CVE-2026-56291",
+        "CVE-2026-48282",
+        "CVE-2026-48908",
+        "CVE-2026-55255",
+        "CVE-2026-56290",
+        "CVE-2026-45659",
+        "CVE-2026-48558",
+        "CVE-2026-12569"
+      ]
+    },
+    "limitations": [
+      "KEV membership is evidence of known exploitation; it does not establish that any particular asset is affected or compromised.",
+      "Vendor/product matching requires separate inventory, version, configuration and vendor-advisory verification. This project performs no vulnerability scan.",
+      "CISA catalog due dates are preserved source fields, not universal deadlines or a determination of obligations for your organization.",
+      "Only the explicitly selected bounded snapshot is indexed. Absence from results is not evidence of safety, and the snapshot may be stale.",
+      "This is extractive retrieval, not an LLM-generated answer. Retrieved instructions remain untrusted evidence and are never executed.",
+      "Hashes detect changes; neither hashes nor local receipts authenticate CISA, prove truth, or retract already exported public data."
+    ]
+  },
+  "analystChecks": [
+    "Confirm the product and affected version against an authorized asset inventory and vendor advisory.",
+    "Check exposure, mitigations, ownership, and maintenance constraints before assigning a local priority.",
+    "Confirm the current vendor remediation and record an organization-specific owner and due date."
+  ],
+  "modelDraft": {
+    "schemaVersion": "kev-draft/v1",
+    "provider": "transformers.js-local-cpu",
+    "model": "onnx-community/Qwen3-0.6B-ONNX",
+    "modelRevision": "58ca03a5e7b354b480b1a82b34bde8dc7b854cc0",
+    "dtype": "q4",
+    "generatedAt": "2026-10-20T00:37:10.753Z",
+    "promptSha256": "a009aa9c8751d4c7dc640bd7410feee0105259f060f0228a2a0eb185122ee188",
+    "evidenceSha256": "7f25e636887316ef969ec3c4a64e653ff0348baa8b51ce947d7d2dbd4fc4331f",
+    "claims": [
+      {
+        "text": "Ivanti Connect Secure contains an authentication bypass vulnerability that allows remote unauthenticated attackers to execute arbitrary commands. CISA recommends applying mitigations according to vendor instructions and following the guidance in BOD 26-04 and the Forensics Triage Requirements.",
+        "citations": [
+          "CVE-2026-104935"
+        ]
+      }
+    ],
+    "usage": {
+      "inputTokens": 378,
+      "outputTokens": 54,
+      "durationMs": 2062.209125,
+      "totalMilliseconds": 4037.573791,
+      "networkFetchCalls": 0
+    },
+    "generation": {
+      "maxNewTokens": 400,
+      "doSample": false,
+      "thinking": false
+    },
+    "validation": {
+      "textFormat": "passed",
+      "citationAssignment": "single-input-source-bound-by-application",
+      "semanticAccuracy": "requires-human-review",
+      "applicability": "not-assessed"
+    },
+    "artifactHashes": {
+      "config.json": "8a04114ba59cc42b47d804d35d1d5c61d746ae4634f41f796768c6e302d39b9e",
+      "tokenizer.json": "e7a95fce95bf5b0946d0ddb3f9d7caa030b7e850bbe92b0edb26bcf563e9f3d5",
+      "tokenizer_config.json": "7c5194eecfd95a4dcbd6b4b502af785d2541fd65a388d1cae7ad43693c67b802",
+      "generation_config.json": "9e9e031ae8bca36eefcdcdd0b35d83c61baa01e31d68d5f5a961c9ca1a4b95bf",
+      "onnx/model_q4.onnx": "d43d836fc5e240df9013733ccd214972c5d21bd9ec47e574e4f1e359cf90aed0"
+    },
+    "rawOutputSha256": "d494fa2b642789ae7e23dbdd3913484ac7758a919c2f2bbecfc6912f89761a7b"
+  },
+  "modelDraftStatus": "unverified-suggestion-citations-checkable-not-factual-verification"
+}

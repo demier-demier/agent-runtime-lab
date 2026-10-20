@@ -22,11 +22,20 @@ export interface Policy {
   approvalTtlMs: number;
 }
 export interface Tool {
-  name: "ticket.create";
+  name: "ticket.create" | "review.publish";
   version: string;
-  capability: "tickets:write";
+  capability: "tickets:write" | "reviews:write";
   idempotent: boolean;
   cost: number;
+}
+/** Exact bytes and destination approved for a local vulnerability review. */
+export interface ReviewPayload {
+  schemaVersion: "kev-publication/v1";
+  evidenceSha256: string;
+  draftSha256: string | null;
+  outputDirectory: string;
+  markdown: string;
+  json: string;
 }
 export type NodeKind = "research" | "propose" | "ticket" | "verify";
 export interface PlanNode {
@@ -38,6 +47,7 @@ export interface Plan {
   nodes: PlanNode[];
   incident: { service: string; failures: number; windowMinutes: number };
   ticket: { title: string; priority: "normal" | "high" };
+  review?: ReviewPayload;
 }
 export interface Action {
   id: string;
@@ -49,6 +59,7 @@ export interface Action {
     priority: string;
     service: string;
     evidence: string[];
+    review?: ReviewPayload;
   };
   payloadDigest: string;
   binding: string;
@@ -112,7 +123,7 @@ export interface Run {
 }
 export type Command =
   | { type: "step" }
-  | { type: "approve" }
+  | { type: "approve"; expectedBinding?: string }
   | { type: "deny"; reason: string }
   | { type: "dispatch" }
   | { type: "complete"; receipt: Receipt }
@@ -281,13 +292,44 @@ export function validatePlan(plan: Plan): void {
     ["normal", "high"].includes(plan.ticket.priority),
     "Invalid priority",
   );
+  if (plan.review) {
+    const r = plan.review;
+    invariant(
+      r.schemaVersion === "kev-publication/v1",
+      "Invalid review schema",
+    );
+    invariant(
+      /^[a-f0-9]{64}$/.test(r.evidenceSha256),
+      "Invalid evidence digest",
+    );
+    invariant(
+      r.draftSha256 === null || /^[a-f0-9]{64}$/.test(r.draftSha256),
+      "Invalid draft digest",
+    );
+    bounded(r.outputDirectory, "output directory", 4096);
+    invariant(
+      r.outputDirectory.startsWith("/"),
+      "Review output must be absolute",
+    );
+    for (const text of [r.markdown, r.json])
+      invariant(
+        typeof text === "string" && text.length > 0 && text.length <= 50_000,
+        "Invalid review content length",
+      );
+    invariant(
+      JSON.parse(r.json).schemaVersion === "kev-review/v1",
+      "Invalid report schema",
+    );
+  }
 }
 export function validatePolicy(p: Policy) {
   integer(p.revision, 1, 1_000_000, "policy revision");
   invariant(
     Array.isArray(p.capabilities) &&
       p.capabilities.length <= 8 &&
-      p.capabilities.every((c) => c === "tickets:write"),
+      p.capabilities.every((c) =>
+        ["tickets:write", "reviews:write"].includes(c),
+      ),
     "Invalid capabilities",
   );
   integer(p.maxCost, 0, 1000, "cost budget");
@@ -296,8 +338,10 @@ export function validatePolicy(p: Policy) {
 }
 export function validateTool(t: Tool) {
   invariant(
-    t.name === "ticket.create" &&
-      t.capability === "tickets:write" &&
+    ((t.name === "ticket.create" && t.capability === "tickets:write") ||
+      (t.name === "review.publish" &&
+        t.capability === "reviews:write" &&
+        t.idempotent)) &&
       typeof t.idempotent === "boolean",
     "Unsupported tool contract",
   );
@@ -390,6 +434,10 @@ export function createRun(
   validatePlan(plan);
   validatePolicy(policy);
   validateTool(tool);
+  invariant(
+    Boolean(plan.review) === (tool.name === "review.publish"),
+    "Plan and tool contract mismatch",
+  );
   const run: Run = {
     schema: 1,
     id: runId,
@@ -411,7 +459,9 @@ export function createRun(
   append(run, now, actor, "run.created", {
     planDigest: digest(plan),
     policyDigest: digest(policy),
-    planner: "deterministic-synthetic-v1",
+    planner: plan.review
+      ? "public-kev-review-v1"
+      : "deterministic-synthetic-v1",
   });
   return run;
 }
@@ -420,6 +470,7 @@ export function actionFor(run: Run, nodeId: string): Action {
     ...run.plan.ticket,
     service: run.plan.incident.service,
     evidence: [...run.findings],
+    ...(run.plan.review ? { review: structuredClone(run.plan.review) } : {}),
   };
   const payloadDigest = digest({ tenant: run.tenant, tool: run.tool, args });
   const binding = digest({
@@ -516,7 +567,9 @@ export function transition(
       run.spent++;
       if (n.kind === "research")
         run.findings.push(
-          `${run.plan.incident.failures} synthetic failures in ${run.plan.incident.windowMinutes} minutes for ${run.plan.incident.service}`,
+          run.plan.review
+            ? `Public KEV evidence packet SHA-256 ${run.plan.review.evidenceSha256}; applicability to the analyst's environment remains unconfirmed.`
+            : `${run.plan.incident.failures} synthetic failures in ${run.plan.incident.windowMinutes} minutes for ${run.plan.incident.service}`,
         );
       if (n.kind === "propose")
         invariant(run.findings.length > 0, "Proposal needs research evidence");
@@ -550,6 +603,11 @@ export function transition(
       "Capability is revoked",
     );
     const action = actionFor(run, run.proposal.nodeId);
+    invariant(
+      run.tool.name !== "review.publish" ||
+        command.expectedBinding === action.binding,
+      "Review approval requires the exact preview binding",
+    );
     run.proposal = action;
     run.approval = {
       binding: action.binding,
@@ -685,6 +743,10 @@ export function transition(
   } else if (command.type === "tool") {
     authorize(run, actor, ["operator"]);
     validateTool(command.tool);
+    invariant(
+      Boolean(run.plan.review) === (command.tool.name === "review.publish"),
+      "Plan and tool contract mismatch",
+    );
     run.tool = structuredClone(command.tool);
     invalidatePending(run);
     event("tool.changed", {

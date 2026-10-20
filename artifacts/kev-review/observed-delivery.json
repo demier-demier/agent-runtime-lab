@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "observed-kev-workflow/v1",
+  "observedAt": "2026-10-20T10:25:09.284Z",
+  "environment": {
+    "node": "v24.22.0",
+    "platform": "darwin",
+    "architecture": "arm64"
+  },
+  "approvalMode": "automated-integration-evaluation-not-human-review",
+  "source": {
+    "url": "https://raw.githubusercontent.com/cisagov/kev-data/6a392940c663b52271fa4e6aa7b39995b18c9a71/known_exploited_vulnerabilities.json",
+    "retrievedAt": "2026-10-20T00:32:46.497Z",
+    "sha256": "b6e27975f6635ecfc546fbd4fd6e444ba63a07ab2abc8876229d77fe083d357d",
+    "catalogVersion": "2026.10.16",
+    "dateReleased": "2026-10-16T17:15:48.8752Z",
+    "totalRecords": 1748,
+    "license": "CC0-1.0",
+    "licenseUrl": "https://github.com/cisagov/kev-data/blob/develop/LICENSE"
+  },
+  "query": "Ivanti Connect Secure authentication bypass",
+  "documentIds": [
+    "CVE-2026-104935",
+    "CVE-2026-18577",
+    "CVE-2026-18556",
+    "CVE-2026-19490",
+    "CVE-2026-20079"
+  ],
+  "evidenceSha256": "7f25e636887316ef969ec3c4a64e653ff0348baa8b51ce947d7d2dbd4fc4331f",
+  "draftSha256": "667ee513fcf069666b8c5d9a62be2427595f1194caa2ad5685b73bc6ef89b15d",
+  "modelDraft": {
+    "model": "onnx-community/Qwen3-0.6B-ONNX",
+    "provider": "transformers.js-local-cpu",
+    "usage": {
+      "inputTokens": 378,
+      "outputTokens": 54,
+      "durationMs": 2062.209125,
+      "totalMilliseconds": 4037.573791,
+      "networkFetchCalls": 0
+    }
+  },
+  "crashExitCode": 86,
+  "interruptedOutboxStatus": "inflight",
+  "resumedStatus": "completed",
+  "finalVerificationStatus": "completed",
+  "publicationCount": 1,
+  "dispatchAttempts": 1,
+  "originalFileInodePreserved": true,
+  "originalFileMtimePreserved": true,
+  "artifactHashes": {
+    "review.md": "2dd7b1fb16529b7b78fd41ad0350ecebbf4405a4bdea312dd21eefc81a578a1d",
+    "review.json": "953f826f4242a6eb294c03fffaac16d003eec160350bee1619b691ff547a8338"
+  },
+  "evidenceChain": {
+    "valid": true,
+    "failedAt": null,
+    "head": "27ed79b1bf2711d2a71e494440a534e69ec7578d8df012219da5054409013dd1"
+  },
+  "eventTypes": [
+    "run.created",
+    "node.completed",
+    "node.completed",
+    "action.proposed",
+    "approval.granted",
+    "outbox.enqueued",
+    "dispatch.started",
+    "recovery.receipt_verified",
+    "node.completed",
+    "run.completed"
+  ],
+  "applicability": "unconfirmed",
+  "scansPerformed": 0,
+  "patchesApplied": 0
+}

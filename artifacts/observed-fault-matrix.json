@@ -1,8 +1,8 @@
 {
   "format": "agent-runtime-observed-fault-matrix-v1",
-  "generatedAt": "2026-10-19T22:27:53.494Z",
+  "generatedAt": "2026-10-20T10:27:52.264Z",
   "environment": {
-    "node": "v24.19.0",
+    "node": "v24.22.0",
     "platform": "darwin",
     "architecture": "arm64"
   },
@@ -22,22 +22,22 @@
           0,
           0
         ],
-        "elapsedMs": 585,
+        "elapsedMs": 601,
         "integrity": {
           "valid": true,
           "failedAt": null,
-          "head": "942e70fd11f14536ce9cfb8b3e9f1a311bd622a7b0c250ce70b94cda5da0d831"
+          "head": "ac2a8be1612c42581e443528c5d0030b0393e70e2106f368bcf1540f538dc669"
         }
       },
       "evidence": [
         {
-          "at": 1792448871079,
+          "at": 1792492069786,
           "data": {
             "planDigest": "2ddb363451e8ab26f0437050011d3fe3cdcbbe56b9cf68ae820ccac2f5c4ea77",
             "planner": "deterministic-synthetic-v1",
             "policyDigest": "7b676cf8a5b773f037ab12dd4d2fbe9181b5c47d470b02629a118ca1644268ac"
           },
-          "hash": "63fa92075cd6b5732ecc6d5133a8210f6f57db9fc596cf132f0186dd66c676f0",
+          "hash": "88323b2893dfa20b97544b154e6a1b043067cdac0a48cb7e4862e9ce043ea855",
           "previous": "0000000000000000000000000000000000000000000000000000000000000000",
           "principal": "operator",
           "role": "operator",
@@ -45,126 +45,126 @@
           "type": "run.created"
         },
         {
-          "at": 1792448871081,
+          "at": 1792492069789,
           "data": {
             "cost": 1,
             "kind": "research",
             "nodeId": "research"
           },
-          "hash": "12d9afba6d81793a4f59b8e70f4378e520c0282282a0e85a7607081e787c9610",
-          "previous": "63fa92075cd6b5732ecc6d5133a8210f6f57db9fc596cf132f0186dd66c676f0",
+          "hash": "91b76488b35535a2b987329a7839594e76417cdd51d85cc3ec8bf7930db5f280",
+          "previous": "88323b2893dfa20b97544b154e6a1b043067cdac0a48cb7e4862e9ce043ea855",
           "principal": "worker",
           "role": "worker",
           "seq": 2,
           "type": "node.completed"
         },
         {
-          "at": 1792448871081,
+          "at": 1792492069790,
           "data": {
             "cost": 1,
             "kind": "propose",
             "nodeId": "propose"
           },
-          "hash": "bd6089ee92edf75e14d061c323baf02a33fdd6557c6a55b52f06ac2dcb328849",
-          "previous": "12d9afba6d81793a4f59b8e70f4378e520c0282282a0e85a7607081e787c9610",
+          "hash": "8d4409630539fc70ef366ed742e3ddc27ee8f3e092d7e250e1b6e7edf80872ff",
+          "previous": "91b76488b35535a2b987329a7839594e76417cdd51d85cc3ec8bf7930db5f280",
           "principal": "worker",
           "role": "worker",
           "seq": 3,
           "type": "node.completed"
         },
         {
-          "at": 1792448871082,
+          "at": 1792492069791,
           "data": {
             "binding": "b17025bdbac79dd8975976ca86a1be8584f19b718cf21f382eb5a799805b9f81",
             "nodeId": "ticket",
             "payloadDigest": "81d95af50c53472284cd10f5ceee8325a6dfb810c557294545881e3ee917c401"
           },
-          "hash": "910f02d89e3b3dab9d5fc0e05109b17c4dcc355b45cd587788509ed8e442ed5f",
-          "previous": "bd6089ee92edf75e14d061c323baf02a33fdd6557c6a55b52f06ac2dcb328849",
+          "hash": "cd6f53e7ad75fc3d1812c3f1b598a5f5064d2aed41db90acc14aef3b367942ac",
+          "previous": "8d4409630539fc70ef366ed742e3ddc27ee8f3e092d7e250e1b6e7edf80872ff",
           "principal": "worker",
           "role": "worker",
           "seq": 4,
           "type": "action.proposed"
         },
         {
-          "at": 1792448871084,
+          "at": 1792492069793,
           "data": {
             "binding": "b17025bdbac79dd8975976ca86a1be8584f19b718cf21f382eb5a799805b9f81",
-            "expiresAt": 1792448991084,
+            "expiresAt": 1792492189793,
             "reviewer": "reviewer"
           },
-          "hash": "5286605d5b971f796daa63389ddcedf5e3fd9b9303ea1dfffaaa27ee2f1e09ca",
-          "previous": "910f02d89e3b3dab9d5fc0e05109b17c4dcc355b45cd587788509ed8e442ed5f",
+          "hash": "9eca3c5367cf6d02549474e3ffb103e589357c8eb0155c618d924197cd9d4f3a",
+          "previous": "cd6f53e7ad75fc3d1812c3f1b598a5f5064d2aed41db90acc14aef3b367942ac",
           "principal": "reviewer",
           "role": "reviewer",
           "seq": 5,
           "type": "approval.granted"
         },
         {
-          "at": 1792448871084,
+          "at": 1792492069793,
           "data": {
             "key": "fff4f64f98f314f13084e303be11bd497d5bb92641d8cc96f4693db86592c0be"
           },
-          "hash": "f3eaa7589ad94b4ce3a7a1049c44da6d94579ddba01c5b2fe81203c86569dec8",
-          "previous": "5286605d5b971f796daa63389ddcedf5e3fd9b9303ea1dfffaaa27ee2f1e09ca",
+          "hash": "789f1393d0796bcab5cab827a7635504c392aa70d76f53686d5e5f0d3ec758b0",
+          "previous": "9eca3c5367cf6d02549474e3ffb103e589357c8eb0155c618d924197cd9d4f3a",
           "principal": "reviewer",
           "role": "reviewer",
           "seq": 6,
           "type": "outbox.enqueued"
         },
         {
-          "at": 1792448871166,
+          "at": 1792492069876,
           "data": {
             "attempt": 1,
             "key": "fff4f64f98f314f13084e303be11bd497d5bb92641d8cc96f4693db86592c0be",
             "payloadDigest": "81d95af50c53472284cd10f5ceee8325a6dfb810c557294545881e3ee917c401"
           },
-          "hash": "b0079d96d5b00dbdf9da1669cf4f8be63aaf4ea638f37ffff3b3d69a6b424c75",
-          "previous": "f3eaa7589ad94b4ce3a7a1049c44da6d94579ddba01c5b2fe81203c86569dec8",
+          "hash": "859f4188ea8716c33515e12ce9d83f0a81dc4f5920076c16c3f8082b7a08ae05",
+          "previous": "789f1393d0796bcab5cab827a7635504c392aa70d76f53686d5e5f0d3ec758b0",
           "principal": "worker-cli",
           "role": "worker",
           "seq": 7,
           "type": "dispatch.started"
         },
         {
-          "at": 1792448871598,
+          "at": 1792492070315,
           "data": {
             "receipt": {
               "key": "fff4f64f98f314f13084e303be11bd497d5bb92641d8cc96f4693db86592c0be",
               "payloadDigest": "81d95af50c53472284cd10f5ceee8325a6dfb810c557294545881e3ee917c401",
               "tenant": "demo",
-              "ticketId": "syn-a528a233-aa41-41b1-b3fb-8eb376b23070"
+              "ticketId": "syn-3a9d29a3-5d8d-4076-b3ce-92bb06e9bd5d"
             }
           },
-          "hash": "238610a7a36831105aee9c802c71c6bf525879f41f2c84e2091d1f7fda0145b5",
-          "previous": "b0079d96d5b00dbdf9da1669cf4f8be63aaf4ea638f37ffff3b3d69a6b424c75",
+          "hash": "091f93cc89c978fcd7a7737580cce643f509c5b94148caabf61374656cb38b19",
+          "previous": "859f4188ea8716c33515e12ce9d83f0a81dc4f5920076c16c3f8082b7a08ae05",
           "principal": "worker-cli",
           "role": "worker",
           "seq": 8,
           "type": "recovery.receipt_verified"
         },
         {
-          "at": 1792448871646,
+          "at": 1792492070366,
           "data": {
             "cost": 1,
             "kind": "verify",
             "nodeId": "verify"
           },
-          "hash": "86f035057d12e7a68dc16620bed926033da5a9236a932b74fb7dd49a844296a5",
-          "previous": "238610a7a36831105aee9c802c71c6bf525879f41f2c84e2091d1f7fda0145b5",
+          "hash": "aba398c1ec440e7259b55259371006940087d3989727fc1bcb34eee3f72f6b25",
+          "previous": "091f93cc89c978fcd7a7737580cce643f509c5b94148caabf61374656cb38b19",
           "principal": "worker-cli",
           "role": "worker",
           "seq": 9,
           "type": "node.completed"
         },
         {
-          "at": 1792448871646,
+          "at": 1792492070366,
           "data": {
             "spent": 6,
             "steps": 4
           },
-          "hash": "942e70fd11f14536ce9cfb8b3e9f1a311bd622a7b0c250ce70b94cda5da0d831",
-          "previous": "86f035057d12e7a68dc16620bed926033da5a9236a932b74fb7dd49a844296a5",
+          "hash": "ac2a8be1612c42581e443528c5d0030b0393e70e2106f368bcf1540f538dc669",
+          "previous": "aba398c1ec440e7259b55259371006940087d3989727fc1bcb34eee3f72f6b25",
           "principal": "worker-cli",
           "role": "worker",
           "seq": 10,
@@ -186,22 +186,22 @@
           0,
           0
         ],
-        "elapsedMs": 209,
+        "elapsedMs": 218,
         "integrity": {
           "valid": true,
           "failedAt": null,
-          "head": "d765492d23bcd8be8cb2edcf7f069758f1ff6884361a3b5ef1f0035f13f40884"
+          "head": "ecc05eecc4c1469be4ae53d70373c1cc034c03bc5a95cf269f77bb4e27d1dbef"
         }
       },
       "evidence": [
         {
-          "at": 1792448871667,
+          "at": 1792492070389,
           "data": {
             "planDigest": "2ddb363451e8ab26f0437050011d3fe3cdcbbe56b9cf68ae820ccac2f5c4ea77",
             "planner": "deterministic-synthetic-v1",
             "policyDigest": "7b676cf8a5b773f037ab12dd4d2fbe9181b5c47d470b02629a118ca1644268ac"
           },
-          "hash": "ccf2b49851786bc9d4b2b4227cd9fefe1adf991df98b3676b3fc15fbc608cbf0",
+          "hash": "283cc960c7010474c530ce7d5a207b3daab66943f43158aba1446abf10707c20",
           "previous": "0000000000000000000000000000000000000000000000000000000000000000",
           "principal": "operator",
           "role": "operator",
@@ -209,126 +209,126 @@
           "type": "run.created"
         },
         {
-          "at": 1792448871667,
+          "at": 1792492070390,
           "data": {
             "cost": 1,
             "kind": "research",
             "nodeId": "research"
           },
-          "hash": "ea6f0ef5dfc898dd6a3fc31c2fd96516b3d13f52202dda476e930a7f5d2895ed",
-          "previous": "ccf2b49851786bc9d4b2b4227cd9fefe1adf991df98b3676b3fc15fbc608cbf0",
+          "hash": "d8e02794b3b5e12696680d068d7a4dcb0e5bc51fb3dd789a3d88a63829433c2a",
+          "previous": "283cc960c7010474c530ce7d5a207b3daab66943f43158aba1446abf10707c20",
           "principal": "worker",
           "role": "worker",
           "seq": 2,
           "type": "node.completed"
         },
         {
-          "at": 1792448871668,
+          "at": 1792492070390,
           "data": {
             "cost": 1,
             "kind": "propose",
             "nodeId": "propose"
           },
-          "hash": "65d22918a52491e5b04c21d6981c7c8ae419c7a65682f49e635a0718391945d3",
-          "previous": "ea6f0ef5dfc898dd6a3fc31c2fd96516b3d13f52202dda476e930a7f5d2895ed",
+          "hash": "fb9bb5e5a2115652c35cae66c0ecd041e309c4f0d32b91619117845c63128cbf",
+          "previous": "d8e02794b3b5e12696680d068d7a4dcb0e5bc51fb3dd789a3d88a63829433c2a",
           "principal": "worker",
           "role": "worker",
           "seq": 3,
           "type": "node.completed"
         },
         {
-          "at": 1792448871669,
+          "at": 1792492070391,
           "data": {
             "binding": "b17025bdbac79dd8975976ca86a1be8584f19b718cf21f382eb5a799805b9f81",
             "nodeId": "ticket",
             "payloadDigest": "81d95af50c53472284cd10f5ceee8325a6dfb810c557294545881e3ee917c401"
           },
-          "hash": "b73778701b313926cad95776742eb8d09b2691dda5325e00cf3efe5b9432a120",
-          "previous": "65d22918a52491e5b04c21d6981c7c8ae419c7a65682f49e635a0718391945d3",
+          "hash": "928d4efc7e965dfd94601702239020e2d3f4cdf2d976600caf7d10366b6810a1",
+          "previous": "fb9bb5e5a2115652c35cae66c0ecd041e309c4f0d32b91619117845c63128cbf",
           "principal": "worker",
           "role": "worker",
           "seq": 4,
           "type": "action.proposed"
         },
         {
-          "at": 1792448871670,
+          "at": 1792492070392,
           "data": {
             "binding": "b17025bdbac79dd8975976ca86a1be8584f19b718cf21f382eb5a799805b9f81",
-            "expiresAt": 1792448991670,
+            "expiresAt": 1792492190392,
             "reviewer": "reviewer"
           },
-          "hash": "8a21e7c14f99b5d0d2f6cbb372ae55edf21cd8a8adc913d917cb5abbf59d7101",
-          "previous": "b73778701b313926cad95776742eb8d09b2691dda5325e00cf3efe5b9432a120",
+          "hash": "facf10e54f22439feaf93a092ee8e0f56ccf22fca926652474c8c804a0d4c013",
+          "previous": "928d4efc7e965dfd94601702239020e2d3f4cdf2d976600caf7d10366b6810a1",
           "principal": "reviewer",
           "role": "reviewer",
           "seq": 5,
           "type": "approval.granted"
         },
         {
-          "at": 1792448871670,
+          "at": 1792492070392,
           "data": {
             "key": "fff4f64f98f314f13084e303be11bd497d5bb92641d8cc96f4693db86592c0be"
           },
-          "hash": "e428a9c89af17101e4cd87c406538d542060e27a5eaa95e7f75d91968336469d",
-          "previous": "8a21e7c14f99b5d0d2f6cbb372ae55edf21cd8a8adc913d917cb5abbf59d7101",
+          "hash": "9bf8de23344baf1d7b35698f721817e1f74e0d7463be8d8d7965a6ed606273b5",
+          "previous": "facf10e54f22439feaf93a092ee8e0f56ccf22fca926652474c8c804a0d4c013",
           "principal": "reviewer",
           "role": "reviewer",
           "seq": 6,
           "type": "outbox.enqueued"
         },
         {
-          "at": 1792448871752,
+          "at": 1792492070478,
           "data": {
             "attempt": 1,
             "key": "fff4f64f98f314f13084e303be11bd497d5bb92641d8cc96f4693db86592c0be",
             "payloadDigest": "81d95af50c53472284cd10f5ceee8325a6dfb810c557294545881e3ee917c401"
           },
-          "hash": "3df96be45df11c9664faa0034556fe1c78322b6f4094f72537b47704cd295ab9",
-          "previous": "e428a9c89af17101e4cd87c406538d542060e27a5eaa95e7f75d91968336469d",
+          "hash": "84bf04f94bf8ce6808c5c50acae5f69d7f09ac20335d116382771e7a59edbaae",
+          "previous": "9bf8de23344baf1d7b35698f721817e1f74e0d7463be8d8d7965a6ed606273b5",
           "principal": "worker-cli",
           "role": "worker",
           "seq": 7,
           "type": "dispatch.started"
         },
         {
-          "at": 1792448871817,
+          "at": 1792492070545,
           "data": {
             "receipt": {
               "key": "fff4f64f98f314f13084e303be11bd497d5bb92641d8cc96f4693db86592c0be",
               "payloadDigest": "81d95af50c53472284cd10f5ceee8325a6dfb810c557294545881e3ee917c401",
               "tenant": "demo",
-              "ticketId": "syn-59ae4b11-6360-4d7d-91bc-8b39fcddde8d"
+              "ticketId": "syn-ec7a0a49-ad67-443d-8dec-82c5d0463901"
             }
           },
-          "hash": "b76392ae63d3dbd7ee2a24c5ef42f9df48110a64b2894fc41f4a252646cfb541",
-          "previous": "3df96be45df11c9664faa0034556fe1c78322b6f4094f72537b47704cd295ab9",
+          "hash": "629a461b5d93b2814f508a3f28c8a6924a9c4a3c48414182301d8cb1e3d976de",
+          "previous": "84bf04f94bf8ce6808c5c50acae5f69d7f09ac20335d116382771e7a59edbaae",
           "principal": "worker-cli",
           "role": "worker",
           "seq": 8,
           "type": "recovery.receipt_verified"
         },
         {
-          "at": 1792448871866,
+          "at": 1792492070596,
           "data": {
             "cost": 1,
             "kind": "verify",
             "nodeId": "verify"
           },
-          "hash": "c296691feb9f05b87f5ab7fd5a2515ed1c15de4e9ac341a9497b4feb66a8e121",
-          "previous": "b76392ae63d3dbd7ee2a24c5ef42f9df48110a64b2894fc41f4a252646cfb541",
+          "hash": "65d78f6192b6261c89c057884071b6130b72ea3fa69b13d8ee4083f86b77d5a0",
+          "previous": "629a461b5d93b2814f508a3f28c8a6924a9c4a3c48414182301d8cb1e3d976de",
           "principal": "worker-cli",
           "role": "worker",
           "seq": 9,
           "type": "node.completed"
         },
         {
-          "at": 1792448871866,
+          "at": 1792492070596,
           "data": {
             "spent": 6,
             "steps": 4
           },
-          "hash": "d765492d23bcd8be8cb2edcf7f069758f1ff6884361a3b5ef1f0035f13f40884",
-          "previous": "c296691feb9f05b87f5ab7fd5a2515ed1c15de4e9ac341a9497b4feb66a8e121",
+          "hash": "ecc05eecc4c1469be4ae53d70373c1cc034c03bc5a95cf269f77bb4e27d1dbef",
+          "previous": "65d78f6192b6261c89c057884071b6130b72ea3fa69b13d8ee4083f86b77d5a0",
           "principal": "worker-cli",
           "role": "worker",
           "seq": 10,
@@ -350,22 +350,22 @@
           0,
           0
         ],
-        "elapsedMs": 215,
+        "elapsedMs": 221,
         "integrity": {
           "valid": true,
           "failedAt": null,
-          "head": "d253d6974fdf1b4645e316039e3d13005baea9310b0eaee9741232b8388ea842"
+          "head": "83ceac17928d7072aaf24326d8fdbed184df29399c0a2d9a2563bb87dba84ba8"
         }
       },
       "evidence": [
         {
-          "at": 1792448871880,
+          "at": 1792492070610,
           "data": {
             "planDigest": "2ddb363451e8ab26f0437050011d3fe3cdcbbe56b9cf68ae820ccac2f5c4ea77",
             "planner": "deterministic-synthetic-v1",
             "policyDigest": "7b676cf8a5b773f037ab12dd4d2fbe9181b5c47d470b02629a118ca1644268ac"
           },
-          "hash": "9b4c34adb3969cde70a98b0bd128c2705fef05c1766ac694a6f7cc4ac266933c",
+          "hash": "2b18feeda1be7ec5ef25cfaaf5bd67ca08befa45aebf46fef79a795937c347f8",
           "previous": "0000000000000000000000000000000000000000000000000000000000000000",
           "principal": "operator",
           "role": "operator",
@@ -373,153 +373,153 @@
           "type": "run.created"
         },
         {
-          "at": 1792448871880,
+          "at": 1792492070610,
           "data": {
             "cost": 1,
             "kind": "research",
             "nodeId": "research"
           },
-          "hash": "7a21b17860db8016e3da9312a9f30ae3b46bc34fa253f321d18b0d2a86033078",
-          "previous": "9b4c34adb3969cde70a98b0bd128c2705fef05c1766ac694a6f7cc4ac266933c",
+          "hash": "2024587566dec6dfaaecfdfbe5b7d0529e4769cb28fe9fc74d50e8b08ca2e123",
+          "previous": "2b18feeda1be7ec5ef25cfaaf5bd67ca08befa45aebf46fef79a795937c347f8",
           "principal": "worker",
           "role": "worker",
           "seq": 2,
           "type": "node.completed"
         },
         {
-          "at": 1792448871881,
+          "at": 1792492070611,
           "data": {
             "cost": 1,
             "kind": "propose",
             "nodeId": "propose"
           },
-          "hash": "2cc43abd63e32e197cbda124e8afdb630c83e77a85aed43db4abe1771aa6a1c9",
-          "previous": "7a21b17860db8016e3da9312a9f30ae3b46bc34fa253f321d18b0d2a86033078",
+          "hash": "494dabd8a5c029150bfd03a33758d89ee28c694dfa3698efeafed7041467bf72",
+          "previous": "2024587566dec6dfaaecfdfbe5b7d0529e4769cb28fe9fc74d50e8b08ca2e123",
           "principal": "worker",
           "role": "worker",
           "seq": 3,
           "type": "node.completed"
         },
         {
-          "at": 1792448871881,
+          "at": 1792492070611,
           "data": {
             "binding": "b17025bdbac79dd8975976ca86a1be8584f19b718cf21f382eb5a799805b9f81",
             "nodeId": "ticket",
             "payloadDigest": "81d95af50c53472284cd10f5ceee8325a6dfb810c557294545881e3ee917c401"
           },
-          "hash": "1a86eb1f66e6e06512c922ed4669975b4b5758f6bd01464c1ebd74a982e39907",
-          "previous": "2cc43abd63e32e197cbda124e8afdb630c83e77a85aed43db4abe1771aa6a1c9",
+          "hash": "e0f5e6b87ff1f7bdcbf82db8fb60d07cde35a079eba0d8dc53a01f9ad1a73338",
+          "previous": "494dabd8a5c029150bfd03a33758d89ee28c694dfa3698efeafed7041467bf72",
           "principal": "worker",
           "role": "worker",
           "seq": 4,
           "type": "action.proposed"
         },
         {
-          "at": 1792448871882,
+          "at": 1792492070612,
           "data": {
             "binding": "b17025bdbac79dd8975976ca86a1be8584f19b718cf21f382eb5a799805b9f81",
-            "expiresAt": 1792448991882,
+            "expiresAt": 1792492190612,
             "reviewer": "reviewer"
           },
-          "hash": "9c0a21d911c78833d1086c777cc8dbc9e886604171ae7024f51318ceb826a818",
-          "previous": "1a86eb1f66e6e06512c922ed4669975b4b5758f6bd01464c1ebd74a982e39907",
+          "hash": "8bbf92e8fb9c655ceb2e8779399d461d55eaddeec6d80c82a14bf11d1c31ec97",
+          "previous": "e0f5e6b87ff1f7bdcbf82db8fb60d07cde35a079eba0d8dc53a01f9ad1a73338",
           "principal": "reviewer",
           "role": "reviewer",
           "seq": 5,
           "type": "approval.granted"
         },
         {
-          "at": 1792448871882,
+          "at": 1792492070612,
           "data": {
             "key": "fff4f64f98f314f13084e303be11bd497d5bb92641d8cc96f4693db86592c0be"
           },
-          "hash": "df9632a047ed78b2be3861eab6269914bc3efc7b2127a0b78e69658ca183f499",
-          "previous": "9c0a21d911c78833d1086c777cc8dbc9e886604171ae7024f51318ceb826a818",
+          "hash": "f49d82350024ea5fd77bb039a3b33232fbcf7c59c0f3ae96fa2420784d64eee6",
+          "previous": "8bbf92e8fb9c655ceb2e8779399d461d55eaddeec6d80c82a14bf11d1c31ec97",
           "principal": "reviewer",
           "role": "reviewer",
           "seq": 6,
           "type": "outbox.enqueued"
         },
         {
-          "at": 1792448871926,
+          "at": 1792492070657,
           "data": {
             "attempt": 1,
             "key": "fff4f64f98f314f13084e303be11bd497d5bb92641d8cc96f4693db86592c0be",
             "payloadDigest": "81d95af50c53472284cd10f5ceee8325a6dfb810c557294545881e3ee917c401"
           },
-          "hash": "ce22ea6c12535cd0a098d8bb94040f4d3c61569b696c1cf0d900b5187910fccf",
-          "previous": "df9632a047ed78b2be3861eab6269914bc3efc7b2127a0b78e69658ca183f499",
+          "hash": "35593fe5ddf7aa74b953841ac1b0a078776ab2893d813a2c88628d3464e5ccfa",
+          "previous": "f49d82350024ea5fd77bb039a3b33232fbcf7c59c0f3ae96fa2420784d64eee6",
           "principal": "worker",
           "role": "worker",
           "seq": 7,
           "type": "dispatch.started"
         },
         {
-          "at": 1792448871977,
+          "at": 1792492070709,
           "data": {
             "key": "fff4f64f98f314f13084e303be11bd497d5bb92641d8cc96f4693db86592c0be",
             "note": "same key; policy and approval checked again at dispatch"
           },
-          "hash": "4fb23961a64af8fc999de4da29e2804d00e6fc9c94f444f63bf0af34391e178b",
-          "previous": "ce22ea6c12535cd0a098d8bb94040f4d3c61569b696c1cf0d900b5187910fccf",
+          "hash": "c7b80935b20957797e4f645634d04d91484b519b82d9a86cc6c08aea2881caa4",
+          "previous": "35593fe5ddf7aa74b953841ac1b0a078776ab2893d813a2c88628d3464e5ccfa",
           "principal": "worker-cli",
           "role": "worker",
           "seq": 8,
           "type": "recovery.retry_ready"
         },
         {
-          "at": 1792448872027,
+          "at": 1792492070759,
           "data": {
             "attempt": 2,
             "key": "fff4f64f98f314f13084e303be11bd497d5bb92641d8cc96f4693db86592c0be",
             "payloadDigest": "81d95af50c53472284cd10f5ceee8325a6dfb810c557294545881e3ee917c401"
           },
-          "hash": "0778ee708a13f3a4a91e1386e9ec5b3c8521a758797a2f5bd7fdebf72690eab9",
-          "previous": "4fb23961a64af8fc999de4da29e2804d00e6fc9c94f444f63bf0af34391e178b",
+          "hash": "a0bb28f4bcf17ba0a6c9dc064c776ab6024acaf6626df800cd938163e1de6d4d",
+          "previous": "c7b80935b20957797e4f645634d04d91484b519b82d9a86cc6c08aea2881caa4",
           "principal": "worker-cli",
           "role": "worker",
           "seq": 9,
           "type": "dispatch.started"
         },
         {
-          "at": 1792448872039,
+          "at": 1792492070771,
           "data": {
             "receipt": {
               "key": "fff4f64f98f314f13084e303be11bd497d5bb92641d8cc96f4693db86592c0be",
               "payloadDigest": "81d95af50c53472284cd10f5ceee8325a6dfb810c557294545881e3ee917c401",
               "tenant": "demo",
-              "ticketId": "syn-bce27c9e-bc72-4843-9630-a320e2f62dcd"
+              "ticketId": "syn-37982978-1d4c-4313-a111-8e493df9dbf6"
             }
           },
-          "hash": "a5a00fa66c6cad7cc1848478ad0e05a0041a0d7d52de2239a8eb44b85508c84f",
-          "previous": "0778ee708a13f3a4a91e1386e9ec5b3c8521a758797a2f5bd7fdebf72690eab9",
+          "hash": "152627e1e9d0284fae9a7474a3a1b59cf7ec2d1fece53c377a6c43012a19e450",
+          "previous": "a0bb28f4bcf17ba0a6c9dc064c776ab6024acaf6626df800cd938163e1de6d4d",
           "principal": "worker-cli",
           "role": "worker",
           "seq": 10,
           "type": "action.completed"
         },
         {
-          "at": 1792448872086,
+          "at": 1792492070822,
           "data": {
             "cost": 1,
             "kind": "verify",
             "nodeId": "verify"
           },
-          "hash": "7fd792a282d76e2072cef544fd526ee72b6ae659e76d5a2d9fda255567640265",
-          "previous": "a5a00fa66c6cad7cc1848478ad0e05a0041a0d7d52de2239a8eb44b85508c84f",
+          "hash": "9cf16da67929d6b40fd7c59f48162bccb3522884c3644474a214cf1bf930569e",
+          "previous": "152627e1e9d0284fae9a7474a3a1b59cf7ec2d1fece53c377a6c43012a19e450",
           "principal": "worker-cli",
           "role": "worker",
           "seq": 11,
           "type": "node.completed"
         },
         {
-          "at": 1792448872086,
+          "at": 1792492070822,
           "data": {
             "spent": 6,
             "steps": 5
           },
-          "hash": "d253d6974fdf1b4645e316039e3d13005baea9310b0eaee9741232b8388ea842",
-          "previous": "7fd792a282d76e2072cef544fd526ee72b6ae659e76d5a2d9fda255567640265",
+          "hash": "83ceac17928d7072aaf24326d8fdbed184df29399c0a2d9a2563bb87dba84ba8",
+          "previous": "9cf16da67929d6b40fd7c59f48162bccb3522884c3644474a214cf1bf930569e",
           "principal": "worker-cli",
           "role": "worker",
           "seq": 12,
@@ -542,22 +542,22 @@
           1,
           0
         ],
-        "elapsedMs": 616,
+        "elapsedMs": 632,
         "integrity": {
           "valid": true,
           "failedAt": null,
-          "head": "8c82810c36f189b0bed08aed81f2637bf199d39a6fb507f8949837bb700212b0"
+          "head": "8ecda41580e2f7d76c44e93633a6ae6a3203d3e398b818b95effd35121d9624c"
         }
       },
       "evidence": [
         {
-          "at": 1792448872099,
+          "at": 1792492070834,
           "data": {
             "planDigest": "2ddb363451e8ab26f0437050011d3fe3cdcbbe56b9cf68ae820ccac2f5c4ea77",
             "planner": "deterministic-synthetic-v1",
             "policyDigest": "7b676cf8a5b773f037ab12dd4d2fbe9181b5c47d470b02629a118ca1644268ac"
           },
-          "hash": "8cf0c4151146dad9cccc047b0a707e9bfd5116f6414a4b2f384d8035b890360e",
+          "hash": "c442040a2cce96cf23fe8cf07ff0ebb766263273b547298ad1183ef5cf27a246",
           "previous": "0000000000000000000000000000000000000000000000000000000000000000",
           "principal": "operator",
           "role": "operator",
@@ -565,138 +565,138 @@
           "type": "run.created"
         },
         {
-          "at": 1792448872100,
+          "at": 1792492070834,
           "data": {
             "cost": 1,
             "kind": "research",
             "nodeId": "research"
           },
-          "hash": "057b80c42c5462b6322b586ffaa5b855d9a479aad92a97b2297b39c7f114411d",
-          "previous": "8cf0c4151146dad9cccc047b0a707e9bfd5116f6414a4b2f384d8035b890360e",
+          "hash": "8e840a6bf3a50cdd987beded5f0bf4c4e79a7e14c3c17ca28db6f604d395b7a1",
+          "previous": "c442040a2cce96cf23fe8cf07ff0ebb766263273b547298ad1183ef5cf27a246",
           "principal": "worker",
           "role": "worker",
           "seq": 2,
           "type": "node.completed"
         },
         {
-          "at": 1792448872100,
+          "at": 1792492070835,
           "data": {
             "cost": 1,
             "kind": "propose",
             "nodeId": "propose"
           },
-          "hash": "9160e1ae50b032067f067b21e0b7777fa1ec163c8bebbdfb1a18e7c1ea4a64aa",
-          "previous": "057b80c42c5462b6322b586ffaa5b855d9a479aad92a97b2297b39c7f114411d",
+          "hash": "046522c27ff09ee565f7e1641ac37ef263f70ad2ab1702959bb8a73bf76a32cb",
+          "previous": "8e840a6bf3a50cdd987beded5f0bf4c4e79a7e14c3c17ca28db6f604d395b7a1",
           "principal": "worker",
           "role": "worker",
           "seq": 3,
           "type": "node.completed"
         },
         {
-          "at": 1792448872101,
+          "at": 1792492070835,
           "data": {
             "binding": "a00151ae6bfdaf4475e0867c965b9c8444d39a84ea526b2b32980dacd2293309",
             "nodeId": "ticket",
             "payloadDigest": "4f2f24dd0484aed2e360fea4c3e31c29931a043310b4e6fdfb00c5a8751403a8"
           },
-          "hash": "5b7f80d887a0ae2e87140ca2515edba05f1006680aa933f73765dfa5813e40b8",
-          "previous": "9160e1ae50b032067f067b21e0b7777fa1ec163c8bebbdfb1a18e7c1ea4a64aa",
+          "hash": "3e7b0ed4cfcfe5cea890a29a9f6c300b3740d5fa5927ada69405b995987c7878",
+          "previous": "046522c27ff09ee565f7e1641ac37ef263f70ad2ab1702959bb8a73bf76a32cb",
           "principal": "worker",
           "role": "worker",
           "seq": 4,
           "type": "action.proposed"
         },
         {
-          "at": 1792448872101,
+          "at": 1792492070836,
           "data": {
             "binding": "a00151ae6bfdaf4475e0867c965b9c8444d39a84ea526b2b32980dacd2293309",
-            "expiresAt": 1792448992101,
+            "expiresAt": 1792492190836,
             "reviewer": "reviewer"
           },
-          "hash": "bc42a78ebc97fa68715de1b33d62e650988bda4110a10077f651f3126d37eabf",
-          "previous": "5b7f80d887a0ae2e87140ca2515edba05f1006680aa933f73765dfa5813e40b8",
+          "hash": "202111d4b65feb8fd66cffbc8eb41c241110d67fb70fd8c00e24539edd1b5e85",
+          "previous": "3e7b0ed4cfcfe5cea890a29a9f6c300b3740d5fa5927ada69405b995987c7878",
           "principal": "reviewer",
           "role": "reviewer",
           "seq": 5,
           "type": "approval.granted"
         },
         {
-          "at": 1792448872101,
+          "at": 1792492070836,
           "data": {
             "key": "b0a9ee0aa9e3d6e3f45487f40a311d08d3b392fcaffb56d076d2d609941a30e0"
           },
-          "hash": "62303d74f4f6516dd0b2ed8f3c5c51ffc8002c9c6668a96a98b18befedbd13c3",
-          "previous": "bc42a78ebc97fa68715de1b33d62e650988bda4110a10077f651f3126d37eabf",
+          "hash": "9db66c62cf4f3c6d93cd5752e81f2bced9ae8d47fb99e0e6fdf306601f595052",
+          "previous": "202111d4b65feb8fd66cffbc8eb41c241110d67fb70fd8c00e24539edd1b5e85",
           "principal": "reviewer",
           "role": "reviewer",
           "seq": 6,
           "type": "outbox.enqueued"
         },
         {
-          "at": 1792448872184,
+          "at": 1792492070921,
           "data": {
             "attempt": 1,
             "key": "b0a9ee0aa9e3d6e3f45487f40a311d08d3b392fcaffb56d076d2d609941a30e0",
             "payloadDigest": "4f2f24dd0484aed2e360fea4c3e31c29931a043310b4e6fdfb00c5a8751403a8"
           },
-          "hash": "62c2d3dc2085de3a6d66ab015630007dcc2f35c6690fdfd2f338dc61debd0e7c",
-          "previous": "62303d74f4f6516dd0b2ed8f3c5c51ffc8002c9c6668a96a98b18befedbd13c3",
+          "hash": "9e978c6e3e5697db896800662cab25308bb53f4b35fdab626ae9a020c8e1a955",
+          "previous": "9db66c62cf4f3c6d93cd5752e81f2bced9ae8d47fb99e0e6fdf306601f595052",
           "principal": "worker-cli",
           "role": "worker",
           "seq": 7,
           "type": "dispatch.started"
         },
         {
-          "at": 1792448872611,
+          "at": 1792492071353,
           "data": {
             "reason": "connector_has_no_idempotency_contract"
           },
-          "hash": "407a90bdaf0786fe1708a1f29b02b21c253b5b16f02e57389a43ff65c583e2bf",
-          "previous": "62c2d3dc2085de3a6d66ab015630007dcc2f35c6690fdfd2f338dc61debd0e7c",
+          "hash": "13790fffe7c6a810ca02f1cf3026cfe95d40035d36ef5661e9f18721b6aad181",
+          "previous": "9e978c6e3e5697db896800662cab25308bb53f4b35fdab626ae9a020c8e1a955",
           "principal": "worker-cli",
           "role": "worker",
           "seq": 8,
           "type": "recovery.requires_reconciliation"
         },
         {
-          "at": 1792448872663,
+          "at": 1792492071411,
           "data": {
             "receipt": {
               "key": "b0a9ee0aa9e3d6e3f45487f40a311d08d3b392fcaffb56d076d2d609941a30e0",
               "payloadDigest": "4f2f24dd0484aed2e360fea4c3e31c29931a043310b4e6fdfb00c5a8751403a8",
               "tenant": "demo",
-              "ticketId": "syn-8c363f5b-490b-42df-9f0a-ceac0b06de6f"
+              "ticketId": "syn-f3b8bfcf-1d1f-45f6-b581-5043136245ec"
             }
           },
-          "hash": "7bb2fcbc16c54a95a684bddee6ea6adb42d85299fe0ab6f39f6045b8b4c9d54c",
-          "previous": "407a90bdaf0786fe1708a1f29b02b21c253b5b16f02e57389a43ff65c583e2bf",
+          "hash": "76fe4890044b43c392adc6c178115f23183992d2cb2270923f430962f9194092",
+          "previous": "13790fffe7c6a810ca02f1cf3026cfe95d40035d36ef5661e9f18721b6aad181",
           "principal": "reviewer",
           "role": "reviewer",
           "seq": 9,
           "type": "action.reconciled"
         },
         {
-          "at": 1792448872705,
+          "at": 1792492071456,
           "data": {
             "cost": 1,
             "kind": "verify",
             "nodeId": "verify"
           },
-          "hash": "af822826ccfbd6a7fe146a6fa695dd862ba05e84564735010c3e4bfe27d08394",
-          "previous": "7bb2fcbc16c54a95a684bddee6ea6adb42d85299fe0ab6f39f6045b8b4c9d54c",
+          "hash": "bc6371c397a5e56f64f583ce2d7c2ecaf5c0355d11e737309c9b81b4d17e9bea",
+          "previous": "76fe4890044b43c392adc6c178115f23183992d2cb2270923f430962f9194092",
           "principal": "worker-cli",
           "role": "worker",
           "seq": 10,
           "type": "node.completed"
         },
         {
-          "at": 1792448872705,
+          "at": 1792492071456,
           "data": {
             "spent": 6,
             "steps": 4
           },
-          "hash": "8c82810c36f189b0bed08aed81f2637bf199d39a6fb507f8949837bb700212b0",
-          "previous": "af822826ccfbd6a7fe146a6fa695dd862ba05e84564735010c3e4bfe27d08394",
+          "hash": "8ecda41580e2f7d76c44e93633a6ae6a3203d3e398b818b95effd35121d9624c",
+          "previous": "bc6371c397a5e56f64f583ce2d7c2ecaf5c0355d11e737309c9b81b4d17e9bea",
           "principal": "worker-cli",
           "role": "worker",
           "seq": 11,
@@ -718,22 +718,22 @@
           1,
           0
         ],
-        "elapsedMs": 773,
+        "elapsedMs": 792,
         "integrity": {
           "valid": true,
           "failedAt": null,
-          "head": "cecbd1e9a1660db7d5ca45b5505488514540c0d2b603b414f0a831a327c27091"
+          "head": "9b09e8ad6c547d23df4fadbd30bc4e74d9a42c8369c2cf95792bdc2e2a99a038"
         }
       },
       "evidence": [
         {
-          "at": 1792448872718,
+          "at": 1792492071469,
           "data": {
             "planDigest": "2ddb363451e8ab26f0437050011d3fe3cdcbbe56b9cf68ae820ccac2f5c4ea77",
             "planner": "deterministic-synthetic-v1",
             "policyDigest": "7b676cf8a5b773f037ab12dd4d2fbe9181b5c47d470b02629a118ca1644268ac"
           },
-          "hash": "2c6d0e8be0fbac5bbf351d6dd47df36e0087ebbc4c8667a9567c3375ec0e8ba9",
+          "hash": "8e495a703a2cf2487e992e4d63f33909026377c90cfeaf792b8915ed29c0ad64",
           "previous": "0000000000000000000000000000000000000000000000000000000000000000",
           "principal": "operator",
           "role": "operator",
@@ -741,126 +741,126 @@
           "type": "run.created"
         },
         {
-          "at": 1792448872719,
+          "at": 1792492071470,
           "data": {
             "cost": 1,
             "kind": "research",
             "nodeId": "research"
           },
-          "hash": "289a3925b8ea8a51ec29f66333f7bddcfa9388fb73113e289e9eac11cd238a49",
-          "previous": "2c6d0e8be0fbac5bbf351d6dd47df36e0087ebbc4c8667a9567c3375ec0e8ba9",
+          "hash": "7f62eea9b4625e022247595e9abc99157621e0acc070b4230dcbc16c023a68c2",
+          "previous": "8e495a703a2cf2487e992e4d63f33909026377c90cfeaf792b8915ed29c0ad64",
           "principal": "worker",
           "role": "worker",
           "seq": 2,
           "type": "node.completed"
         },
         {
-          "at": 1792448872719,
+          "at": 1792492071470,
           "data": {
             "cost": 1,
             "kind": "propose",
             "nodeId": "propose"
           },
-          "hash": "da9f00849af295e489bf467fe7d5dc249f0bbb164cd54b698a7fb52412caaf3e",
-          "previous": "289a3925b8ea8a51ec29f66333f7bddcfa9388fb73113e289e9eac11cd238a49",
+          "hash": "94c223af2a5a85875d490d15f43bba6760a3c3c8db3cf96b3273533545cc6352",
+          "previous": "7f62eea9b4625e022247595e9abc99157621e0acc070b4230dcbc16c023a68c2",
           "principal": "worker",
           "role": "worker",
           "seq": 3,
           "type": "node.completed"
         },
         {
-          "at": 1792448872720,
+          "at": 1792492071470,
           "data": {
             "binding": "b17025bdbac79dd8975976ca86a1be8584f19b718cf21f382eb5a799805b9f81",
             "nodeId": "ticket",
             "payloadDigest": "81d95af50c53472284cd10f5ceee8325a6dfb810c557294545881e3ee917c401"
           },
-          "hash": "3ed626a9859de2b22f723c4d6821334ec9971015ac09cc4acac0546799613973",
-          "previous": "da9f00849af295e489bf467fe7d5dc249f0bbb164cd54b698a7fb52412caaf3e",
+          "hash": "6f5191581586cfbc552ce2ca2b7deb3d1717b335cab0b973e30b8eaadff900be",
+          "previous": "94c223af2a5a85875d490d15f43bba6760a3c3c8db3cf96b3273533545cc6352",
           "principal": "worker",
           "role": "worker",
           "seq": 4,
           "type": "action.proposed"
         },
         {
-          "at": 1792448872721,
+          "at": 1792492071471,
           "data": {
             "binding": "b17025bdbac79dd8975976ca86a1be8584f19b718cf21f382eb5a799805b9f81",
-            "expiresAt": 1792448992721,
+            "expiresAt": 1792492191471,
             "reviewer": "reviewer"
           },
-          "hash": "60c8bbb05b8a6f370b70e60e24b33991e39a7fbce01e3e42ae5f832b1f208b72",
-          "previous": "3ed626a9859de2b22f723c4d6821334ec9971015ac09cc4acac0546799613973",
+          "hash": "08ce7d9d59a8af1888c198ed0514653af73951439ae9a799e88e56d70abe92c1",
+          "previous": "6f5191581586cfbc552ce2ca2b7deb3d1717b335cab0b973e30b8eaadff900be",
           "principal": "reviewer",
           "role": "reviewer",
           "seq": 5,
           "type": "approval.granted"
         },
         {
-          "at": 1792448872721,
+          "at": 1792492071471,
           "data": {
             "key": "fff4f64f98f314f13084e303be11bd497d5bb92641d8cc96f4693db86592c0be"
           },
-          "hash": "cd5dd26cd3155fdaa6c1163afda86cb4c351a51859269ff70f86b1e011af9402",
-          "previous": "60c8bbb05b8a6f370b70e60e24b33991e39a7fbce01e3e42ae5f832b1f208b72",
+          "hash": "b4f2cc6f1c3a25cafc66122fe365b1769be8b2b25b3e46f0d8e30728a792e6ef",
+          "previous": "08ce7d9d59a8af1888c198ed0514653af73951439ae9a799e88e56d70abe92c1",
           "principal": "reviewer",
           "role": "reviewer",
           "seq": 6,
           "type": "outbox.enqueued"
         },
         {
-          "at": 1792448872802,
+          "at": 1792492071560,
           "data": {
             "attempt": 1,
             "key": "fff4f64f98f314f13084e303be11bd497d5bb92641d8cc96f4693db86592c0be",
             "payloadDigest": "81d95af50c53472284cd10f5ceee8325a6dfb810c557294545881e3ee917c401"
           },
-          "hash": "47aa6caf9719fa8272a9ca802c1aa8a99d9ec30c631635b87ad34b4e7e951098",
-          "previous": "cd5dd26cd3155fdaa6c1163afda86cb4c351a51859269ff70f86b1e011af9402",
+          "hash": "f23e043d0006e47e09fb14afeef29174e4c92b08e7cbe25ebe5c3aaa9499128b",
+          "previous": "b4f2cc6f1c3a25cafc66122fe365b1769be8b2b25b3e46f0d8e30728a792e6ef",
           "principal": "worker-a",
           "role": "worker",
           "seq": 7,
           "type": "dispatch.started"
         },
         {
-          "at": 1792448873421,
+          "at": 1792492072181,
           "data": {
             "receipt": {
               "key": "fff4f64f98f314f13084e303be11bd497d5bb92641d8cc96f4693db86592c0be",
               "payloadDigest": "81d95af50c53472284cd10f5ceee8325a6dfb810c557294545881e3ee917c401",
               "tenant": "demo",
-              "ticketId": "syn-e198f7a9-bfe9-45a8-87a0-b69176deb5d2"
+              "ticketId": "syn-199c6cc4-06f6-4743-bb0d-8d96e17863e6"
             }
           },
-          "hash": "b841f902c63cc7e1321aa38ac68062a8434e239e689f90c809ae6d171d20dfb7",
-          "previous": "47aa6caf9719fa8272a9ca802c1aa8a99d9ec30c631635b87ad34b4e7e951098",
+          "hash": "af7cc86047c3a2d380e5d5c547340bf97f82de82c257c9d3671a32f4e3110a77",
+          "previous": "f23e043d0006e47e09fb14afeef29174e4c92b08e7cbe25ebe5c3aaa9499128b",
           "principal": "worker-a",
           "role": "worker",
           "seq": 8,
           "type": "action.completed"
         },
         {
-          "at": 1792448873482,
+          "at": 1792492072252,
           "data": {
             "cost": 1,
             "kind": "verify",
             "nodeId": "verify"
           },
-          "hash": "03169fec7eb5bc47511ab46dce82f3d323f542e8f46414fa5b37a1af8c5505e4",
-          "previous": "b841f902c63cc7e1321aa38ac68062a8434e239e689f90c809ae6d171d20dfb7",
+          "hash": "4999316a1e22ecdec1329d8bb544afa33f2a73b36fe6348fe5fdffa9b85ab78c",
+          "previous": "af7cc86047c3a2d380e5d5c547340bf97f82de82c257c9d3671a32f4e3110a77",
           "principal": "worker-cli",
           "role": "worker",
           "seq": 9,
           "type": "node.completed"
         },
         {
-          "at": 1792448873482,
+          "at": 1792492072252,
           "data": {
             "spent": 6,
             "steps": 4
           },
-          "hash": "cecbd1e9a1660db7d5ca45b5505488514540c0d2b603b414f0a831a327c27091",
-          "previous": "03169fec7eb5bc47511ab46dce82f3d323f542e8f46414fa5b37a1af8c5505e4",
+          "hash": "9b09e8ad6c547d23df4fadbd30bc4e74d9a42c8369c2cf95792bdc2e2a99a038",
+          "previous": "4999316a1e22ecdec1329d8bb544afa33f2a73b36fe6348fe5fdffa9b85ab78c",
           "principal": "worker-cli",
           "role": "worker",
           "seq": 10,

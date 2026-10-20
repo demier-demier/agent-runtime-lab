@@ -8,5 +8,5 @@
     "skipLibCheck": true,
     "lib": ["ES2023", "DOM"]
   },
-  "include": ["web/app.ts", "src/core.ts", "src/indexeddb.ts"]
+  "include": ["web/*.ts", "src/core.ts", "src/indexeddb.ts"]
 }

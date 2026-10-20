@@ -1,0 +1,347 @@
+.kev-shell {
+  max-width: 1400px;
+}
+.kev-hero {
+  gap: 48px;
+  padding-bottom: 35px;
+}
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
+}
+.hero-links .button {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+.kev-metrics {
+  grid-template-columns: repeat(4, 1fr);
+}
+.recovery-card {
+  margin-bottom: 24px;
+}
+.recovery-stages {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 23px;
+  gap: 18px;
+}
+.recovery-stages li {
+  background: #101c25;
+  border: 1px solid #354652;
+  border-radius: 9px;
+  padding: 20px 16px;
+}
+.recovery-stages li:nth-child(2) {
+  border-color: #967345;
+}
+.recovery-stages li:last-child {
+  border-color: #617a48;
+}
+.recovery-stages li > span {
+  color: var(--lime);
+  font-size: 11px;
+  font-family: ui-monospace, monospace;
+}
+.recovery-stages h3 {
+  margin: 16px 0 10px;
+  font-size: 14px;
+}
+.recovery-stages p {
+  color: #a8bac5;
+  font-size: 12px;
+  line-height: 1.65;
+  margin: 0;
+}
+.evidence-details {
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+  margin-top: 20px;
+}
+.evidence-details summary {
+  cursor: pointer;
+  color: #d5e2c3;
+  font-size: 12px;
+}
+.event-sequence {
+  list-style: decimal-leading-zero;
+  padding-left: 32px;
+  columns: 2;
+  gap: 36px;
+}
+.event-sequence li {
+  padding: 9px 0 9px 5px;
+  color: #a7bcc9;
+  font:
+    11px ui-monospace,
+    monospace;
+  overflow-wrap: anywhere;
+}
+.kev-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+.kev-sidebar {
+  display: grid;
+  gap: 24px;
+  min-width: 0;
+}
+.query-label,
+.hash-label {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: #96a8b5;
+  margin: 20px 0 8px;
+}
+.query-text {
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  line-height: 1.5;
+  color: #e0e9d4;
+  margin: 0 0 12px;
+}
+.records {
+  margin-top: 20px;
+}
+.record {
+  border: 1px solid var(--border);
+  background: #111e28;
+  border-radius: 8px;
+  margin: 12px 0;
+  overflow: hidden;
+}
+.record summary {
+  cursor: pointer;
+  padding: 17px;
+  display: block;
+}
+.record summary::after {
+  content: "Inspect source +";
+  color: #bdcf9e;
+  display: block;
+  font-size: 10px;
+  margin-top: 12px;
+}
+.record[open] summary::after {
+  content: "Close source −";
+}
+.record-title {
+  display: block;
+  color: #d4ecb1;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+.record-product {
+  display: block;
+  color: #d8e0e0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.record-body {
+  padding: 0 17px 18px;
+}
+.record-body p {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #aebfcb;
+  overflow-wrap: anywhere;
+}
+.record-body .excerpt {
+  color: #cbd5d5;
+  border-left: 2px solid #4d6554;
+  padding-left: 12px;
+}
+.record-body a,
+.text-link {
+  font-size: 12px;
+  color: #d6edb6;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.facts {
+  margin: 0 0 20px;
+}
+.facts div {
+  display: grid;
+  grid-template-columns: 105px minmax(0, 1fr);
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid #2c3d49;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.facts dt {
+  color: #8fa6b7;
+}
+.facts dd {
+  margin: 0;
+  color: #d2dfdb;
+  overflow-wrap: anywhere;
+}
+.hash {
+  display: block;
+  font-size: 10px;
+  line-height: 1.7;
+  color: #b5c6cc;
+  overflow-wrap: anywhere;
+}
+.warning-tag {
+  display: inline-block;
+  color: #f5d799;
+  background: #3a3020;
+  border: 1px solid #765f38;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  border-radius: 4px;
+  padding: 7px 9px;
+  margin-bottom: 18px;
+}
+.model-name {
+  font-size: 12px;
+  color: #d8e6c6;
+  overflow-wrap: anywhere;
+  margin-top: 0;
+}
+.model-claim {
+  border-left: 2px solid #977d46;
+  padding-left: 15px;
+  margin: 18px 0;
+}
+.model-claim p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #c2d0d6;
+}
+.model-claim .citations {
+  color: #d8c9a1;
+  font-size: 10px;
+}
+.downloads-card {
+  margin-top: 24px;
+}
+.download-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.download-item {
+  border: 1px solid #4a6050;
+  border-radius: 8px;
+  padding: 20px 16px;
+  background: #1c2b27;
+  text-decoration: none;
+}
+.download-item strong {
+  font-size: 14px;
+  color: #e0edc5;
+  display: block;
+  margin-bottom: 10px;
+}
+.download-item span {
+  display: block;
+  color: #a0b5ac;
+  font-size: 11px;
+  line-height: 1.7;
+}
+.hash-checks {
+  margin-top: 20px;
+  display: grid;
+  gap: 10px;
+}
+.hash-check {
+  font-size: 11px;
+  line-height: 1.7;
+  color: #b9d89b;
+}
+.hash-check code {
+  display: block;
+  overflow-wrap: anywhere;
+  font-size: 10px;
+  color: #9eb0bb;
+}
+.report-preview {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-height: 560px;
+  overflow: auto;
+  font:
+    11px/1.8 ui-monospace,
+    monospace;
+  color: #b8c9d0;
+  padding: 18px;
+  background: #0e1922;
+  border-radius: 7px;
+}
+.kev-shell .hint {
+  line-height: 1.75;
+}
+.kev-shell :focus-visible {
+  outline: 2px solid var(--lime);
+  outline-offset: 4px;
+}
+@media (max-width: 1000px) {
+  .kev-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .kev-sidebar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .recovery-stages {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 650px) {
+  .kev-shell {
+    padding: 0 20px;
+  }
+  .kev-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 25px;
+  }
+  .hero-links {
+    display: grid;
+  }
+  .kev-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .kev-metrics > div {
+    border-bottom: 1px solid var(--border);
+  }
+  .kev-sidebar,
+  .download-links,
+  .recovery-stages {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .event-sequence {
+    columns: 1;
+  }
+  .card-heading {
+    flex-direction: column;
+    gap: 14px;
+  }
+  .kev-shell .topbar {
+    font-size: 11px;
+    gap: 12px;
+  }
+  .kev-shell .wordmark {
+    font-size: 9px;
+    letter-spacing: 0.04em;
+    gap: 7px;
+  }
+  .kev-shell .brandmark {
+    width: 27px;
+    height: 27px;
+    font-size: 14px;
+  }
+  .kev-shell .boundary {
+    flex-direction: column;
+    align-items: start;
+    gap: 8px;
+  }
+}

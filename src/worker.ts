@@ -1,4 +1,10 @@
-import { invariant, type Command, type Principal, type Run } from "./core.js";
+import {
+  canonical,
+  invariant,
+  type Command,
+  type Principal,
+  type Run,
+} from "./core.js";
 import { SqliteStore, type Lease } from "./sqlite.js";
 import type { Connector } from "./connector.js";
 export interface WorkerOptions {
@@ -70,6 +76,16 @@ export async function tick(
       state.status !== "unknown",
       "Unknown outcome: a reviewer must reconcile remote evidence",
     );
+    if (
+      state.tool.name === "review.publish" &&
+      state.outbox?.status === "delivered"
+    ) {
+      const observed = await connector.lookup(state.outbox.action);
+      invariant(
+        observed && canonical(observed) === canonical(state.outbox.receipt),
+        "Published review is missing or changed",
+      );
+    }
     commit({ type: "step" });
     return state;
   } finally {
